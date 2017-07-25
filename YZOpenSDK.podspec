@@ -20,12 +20,12 @@ Pod::Spec.new do |s|
   s.default_subspec = 'Base'
 
   s.subspec 'Base' do |base|
-    base.ios.vendored_frameworks = './YZBaseSDK/YZBaseSDK.framework'
+    base.ios.vendored_framework = './YZBaseSDK/YZBaseSDK.framework'
   end
   
   s.subspec 'Native' do |native|
-    native.ios.vendored_frameworks = './YZNativeSDK/YZNativeSDK.framework'
-    native.resource = './YZNativSDK/YZNativeRes.bundle'
+    native.ios.vendored_framework = './YZNativeSDK/YZNativeSDK.framework'
+    native.resources = './YZNativSDK/YZNativeRes.bundle'
     native.dependency 'YZOpenSDK/Base'
   end
 
