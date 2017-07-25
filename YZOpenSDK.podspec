@@ -17,15 +17,18 @@ Pod::Spec.new do |s|
   s.author             = { "liuyang" => "liuyang@youzan.com" }
   s.ios.deployment_target = "7.0"
   s.source       = { :git => "https://github.com/youzan/YouzanMobileSDK-iOS.git", :tag => s.version.to_s }
+
+  s.frameworks = 'WebKit', 'UIKit', 'Foundation'
+
   s.default_subspec = 'Base'
 
   s.subspec 'Base' do |base|
-    base.ios.vendored_framework = './YZBaseSDK/YZBaseSDK.framework'
+    base.ios.vendored_framework = 'YZBaseSDK/YZBaseSDK.framework'
   end
   
   s.subspec 'Native' do |native|
-    native.ios.vendored_framework = './YZNativeSDK/YZNativeSDK.framework'
-    native.resources = './YZNativSDK/YZNativeRes.bundle'
+    native.ios.vendored_framework = 'YZNativeSDK/YZNativeSDK.framework'
+    native.resources = 'YZNativeSDK/YZNativeRes.bundle'
     native.dependency 'YZOpenSDK/Base'
   end
 
