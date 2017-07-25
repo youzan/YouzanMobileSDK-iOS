@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "YZOpenSDK"
-  s.version      = "0.1.0"
+  s.version      = "0.0.1"
   s.summary      = "A short description of YZOpenSDK."
   s.description  = 'youzanyun app sdk'
   s.homepage     = "https://www.youzanyun.com/"
