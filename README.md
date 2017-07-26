@@ -10,6 +10,15 @@
 ## YZOpenSDK
 有赞云AppSDK是为移动端应用打造的电商交易系统，通过一个SDK便可以在APP内集成有赞提供的整个交易服务。
 
+有赞AppSDK提供两种: 基础版SDK(BaseSDK)和原生版SDK(NativeSDK),客户端根据需求选择两者之一接入即可。
+
+两者区别在于:
+基础版SDK基于webview将有赞提供的Html5页面嵌入到App;
+原生版SDK在基础SDK之上提供了部分原生化页面, 并会在后续更新升级中不断优化体验;
+此外, 基础版SDK中商品详情页面仍需登录下可见, 原生版SDK中商品详情页面无需登录可见。
+
+可根据您实际业务中对页面的要求, 选择其中一种客户端产品接入。
+
 ## BaseSDK Installation
 ### CocoaPods
  1. Add `pod 'YZOpenSDK'` to your Podfile.
