@@ -1,0 +1,6 @@
+framework module Unsuggest {
+  umbrella header "Unsuggest.h"
+
+  export *
+  module * { export * }
+}
