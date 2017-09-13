@@ -9,13 +9,13 @@
 Pod::Spec.new do |s|
 
   s.name         = "YZOpenSDK"
-  s.version      = "0.0.3"
+  s.version      = "0.1.0"
   s.summary      = "An AppSDK for Youzanyun."
   s.description  = 'There are praise cloud AppSDK is for mobile applications to build the electricity trading system'   \
                    'through an SDK will be able to integrate in the APP to provide the entire transaction services.'
   s.homepage     = "https://www.youzanyun.com/"
   s.license      = "MIT"
-  s.author       = { "liuyang" => "liuyang@youzan.com" }
+  s.author       = { "pansheng" => "pansheng@youzan.com" }
   s.source       = { :git => "https://github.com/youzan/YouzanMobileSDK-iOS.git", :tag => s.version.to_s }
 
   s.frameworks   = 'WebKit', 'UIKit', 'Foundation'

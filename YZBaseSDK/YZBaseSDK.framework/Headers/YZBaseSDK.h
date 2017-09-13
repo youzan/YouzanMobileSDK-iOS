@@ -3,7 +3,7 @@
 //  YZBaseSDK
 //
 //  Created by smf on 2017/6/27.
-//  Copyright © 2017年 smf. All rights reserved.
+//  Copyright © 2017年 Youzan. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
