@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
 
-  s.name         = "YZOpenSDK"
+  s.name         = "YZAppSDK"
   s.version      = "0.1.0"
   s.summary      = "An AppSDK for Youzanyun."
   s.description  = 'There are praise cloud AppSDK is for mobile applications to build the electricity trading system'   \
@@ -19,6 +19,8 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/youzan/YouzanMobileSDK-iOS.git", :tag => s.version.to_s }
 
   s.frameworks   = 'WebKit', 'UIKit', 'Foundation'
+  s.requires_arc = true
+
   s.ios.deployment_target = "7.0"
   s.default_subspec = 'Base'
   s.subspec 'Base' do |base|
@@ -27,7 +29,8 @@ Pod::Spec.new do |s|
   s.subspec 'Native' do |native|
     native.ios.vendored_framework = 'YZNativeSDK/YZNativeSDK.framework'
     native.resources = 'YZNativeSDK/YZNativeRes.bundle'
-    native.dependency 'YZOpenSDK/Base'
+    native.dependency 'YZAppSDK/Base'
   end
 
 end
+
