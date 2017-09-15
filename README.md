@@ -21,7 +21,7 @@
 
 ## BaseSDK Installation
 ### CocoaPods
- 1. Add `pod 'YZOpenSDK'` to your Podfile.
+ 1. Add `pod 'YZAppSDK'` to your Podfile.
  2. Run `pod install` or `pod update`.
 
 ### Manually
@@ -30,7 +30,7 @@
  
 ## NativeSDK Installation
 ### CocoaPods
- 1. Add `pod 'YZOpenSDK/Native'` to your Podfile.
+ 1. Add `pod 'YZAppSDK/Native'` to your Podfile.
  2. Run `pod install` or `pod update`.
 
 ### Manually
