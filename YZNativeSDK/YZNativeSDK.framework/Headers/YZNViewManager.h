@@ -10,6 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^ShareCallBackBlock)(NSString *title, NSURL *shareURL, NSURL *_Nullable imageURL);
+
 /*!
  @header
  管理 AppSDK 原生视图，并在适当的时候向代理发送登录请求
@@ -76,15 +78,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (UIViewController *)viewControllerForUrl:(NSURL *)url;
 
-
 /*!
  分享页面，当shareblock为nil时，调用系统的分享页面
 
  @param viewController 需要分享的视图
  @param shareBlock 对需要分享的视图的标题与链接处理的block
  */
-- (void)shareViewController:(UIViewController *)viewController withShareBlock:(void(^)(NSString *title, NSURL *shareURL))shareBlock;
-
+- (void)shareViewController:(UIViewController *)viewController
+             withShareBlock:(_Nullable ShareCallBackBlock)shareBlock;
 
 /*!
  刷新目标 viewcontroller
