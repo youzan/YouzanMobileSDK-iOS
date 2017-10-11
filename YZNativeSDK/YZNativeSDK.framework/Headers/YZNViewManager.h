@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^ShareCallBackBlock)(NSString *title, NSURL *shareURL, NSURL *_Nullable imageURL);
+typedef void(^YZShareCallBackBlock)(NSString *title, NSURL *shareURL, NSURL *_Nullable imageURL);
 
 /*!
  @header
@@ -85,7 +85,7 @@ typedef void(^ShareCallBackBlock)(NSString *title, NSURL *shareURL, NSURL *_Null
  @param shareBlock 对需要分享的视图的标题与链接处理的block
  */
 - (void)shareViewController:(UIViewController *)viewController
-             withShareBlock:(_Nullable ShareCallBackBlock)shareBlock;
+             withShareBlock:(_Nullable YZShareCallBackBlock)shareBlock;
 
 /*!
  刷新目标 viewcontroller
