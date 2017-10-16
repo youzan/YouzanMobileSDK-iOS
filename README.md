@@ -1,7 +1,4 @@
-[![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/youzan/SigmaTableViewModel/blob/master/LICENSE)&nbsp;
-[![CocoaPods](https://img.shields.io/badge/pod-v0.0.1-blue.svg)](http://cocoapods.org/?q=SigmaTableViewModel)&nbsp;
-[![Platform](https://img.shields.io/badge/platform-ios-yellow.svg)](https://www.apple.com/nl/ios/)&nbsp;
-[![Support](https://img.shields.io/badge/support-iOS%207%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
+[![License][license]][CocoaPods] [![Pod Version][version]][CocoaPods] [![Platform][platform]][CocoaPods]
 
 <p>
 <a href="https://github.com/youzan/"><img alt="有赞logo" width="36px" src="https://img.yzcdn.cn/public_files/2017/02/09/e84aa8cbbf7852688c86218c1f3bbf17.png" alt="youzan">
@@ -38,5 +35,12 @@
  2. Add the source files to your Xcode project.
 
 ## License
-[MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89)
+[MIT][LICENSE]
 
+
+[LICENSE]: https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89
+
+[CocoaPods]: http://cocoapods.org/pods/YZAppSDK
+[version]: https://img.shields.io/cocoapods/v/YZAppSDK.svg?style=flat
+[license]: https://img.shields.io/cocoapods/l/YZAppSDK.svg?style=flat
+[platform]: https://img.shields.io/cocoapods/p/YZAppSDK.svg?style=flat
