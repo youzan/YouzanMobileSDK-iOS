@@ -3,7 +3,7 @@
 //  YouzaniOSDemo
 //
 //  Created by 可乐 on 16/10/13.
-//  Copyright © 2016年 张伟. All rights reserved.
+//  Copyright © 2016年 Youzan. All rights reserved.
 //
 
 #import "ViewController.h"

@@ -3,7 +3,7 @@
 //  YZNativeDemo
 //
 //  Created by vee on 2017/4/11.
-//  Copyright © 2017年 kele. All rights reserved.
+//  Copyright © 2017年 Youzan. All rights reserved.
 //
 
 #import "DemoQuickViewController.h"
