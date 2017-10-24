@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "YZAppSDK"
-  s.version      = "5.2.1"
+  s.version      = "5.3.0"
   s.summary      = "An AppSDK for Youzanyun."
   s.description  = 'There are praise cloud AppSDK is for mobile applications to build the electricity trading system'   \
                    'through an SDK will be able to integrate in the APP to provide the entire transaction services.'
@@ -25,6 +25,8 @@ Pod::Spec.new do |s|
   s.default_subspec = 'Base'
   s.subspec 'Base' do |base|
     base.ios.vendored_framework = 'YZBaseSDK/YZBaseSDK.framework'
+    base.resources = 'YZBaseSDK/YZBaseRes.bundle'
+
   end
   s.subspec 'Native' do |native|
     native.ios.vendored_framework = 'YZNativeSDK/YZNativeSDK.framework'

@@ -38,6 +38,7 @@ typedef NS_OPTIONS(NSUInteger, YouzanNotice) {
 @property (nullable, nonatomic, copy, readonly) NSString *accessToken;
 
 + (instancetype)sharedInstance;
++ (NSString *)semanticVersion;
 
 /**
  设置 client id
@@ -45,6 +46,13 @@ typedef NS_OPTIONS(NSUInteger, YouzanNotice) {
  @param clientId 从有赞云平台申请到的 client_id
  */
 + (void)setUpWithClientId:(NSString *)clientId;
+
+/**
+ 设置你 App 的 Scheme, 设置后调用 h5 微信支付才能跳转回您的 App.
+ 
+ @param scheme App 的 Scheme, 例如: wechat
+ */
++ (void)setScheme:(NSString *)scheme;
 
 /*!
  APP用户登录成功后设置。
@@ -82,12 +90,42 @@ typedef NS_OPTIONS(NSUInteger, YouzanNotice) {
  */
 + (YZNotice *)noticeFromYouzanWithUrl:(NSURL *)url;
 
-/*!
- *  页面加载完成，初始化有赞交互环境
- *
- *  @param webView webview
+/**
+ SDK 实现的 WebView Delegate. 必须实现！
+ 在你的 WebView 的对应代理方法中调用此方法
+ 
+ @param webView webView
  */
-+ (void)initYouzanWithUIWebView:(UIWebView *)webView;
++ (void)webViewDidStartLoad:(UIWebView *)webView;
+
+/**
+ SDK 实现的 WebView Delegate. 必须实现！
+ 在你的 WebView 的对应代理方法中调用此方法
+ 
+ @param webView webView
+ */
++ (void)webViewDidFinishLoad:(UIWebView *)webView;
+
+/**
+ SDK 实现的 WebView Delegate. 必须实现！
+ 在你的 WebView 的对应代理方法中调用此方法
+ 
+ @param webView webView
+ */
++ (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error;
+
+/**
+ SDK 实现的 WebView Delegate. 必须实现！
+ 某些请求可能不需要跳转，例如后退到发起微信支付页面，会导致循环跳转到微信的问题。
+ 在webview对应的代理方法中调用此方法，可以帮助你防止这些问题的发生。
+
+ @param webView webView
+ @param request request
+ @param navigationType navigationType
+ @return 是否应该load当前request。YES 表示 request 没问题，可以正常跳转，NO 表示不建议跳转。你可以在 webView 的对应方法中直接返回这个值。
+ */
++ (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request
+ navigationType:(UIWebViewNavigationType)navigationType;
 
 /*!
  *  触发分享操作
@@ -96,10 +134,10 @@ typedef NS_OPTIONS(NSUInteger, YouzanNotice) {
  */
 + (void)shareActionWithUIWebView:(UIWebView *)webView;
 
-
 @end
 
 @interface YZSDK (deprecated)
++ (void)initYouzanWithUIWebView:(UIWebView *)webView NS_DEPRECATED_IOS(2_0, 2_0, "use webViewDidFinishLoad instead");
 + (void)setUserAgent:(NSString *)userAgent NS_DEPRECATED_IOS(2_0, 2_0, "use setUpWithClientId instead");
 @end
 

@@ -16,8 +16,6 @@
 
 @class YZSQuickDealManager;
 
-
-
 /*!
  @protocol 快速操作视图协议
  */
