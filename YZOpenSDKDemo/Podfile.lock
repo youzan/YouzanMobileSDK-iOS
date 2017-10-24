@@ -1,0 +1,19 @@
+PODS:
+  - YZAppSDK/Base (5.3.0)
+  - YZAppSDK/Native (5.3.0):
+    - YZAppSDK/Base
+
+DEPENDENCIES:
+  - YZAppSDK/Base (from `../`)
+  - YZAppSDK/Native (from `../`)
+
+EXTERNAL SOURCES:
+  YZAppSDK:
+    :path: ../
+
+SPEC CHECKSUMS:
+  YZAppSDK: 40aecc2a04c008632853acc09078f3814ae67a44
+
+PODFILE CHECKSUM: 37699b495200c7dcc091edf7c5c780a90b897880
+
+COCOAPODS: 1.4.0.beta.1

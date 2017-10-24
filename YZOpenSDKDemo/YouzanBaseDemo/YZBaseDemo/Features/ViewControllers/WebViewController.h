@@ -24,3 +24,4 @@ typedef NS_ENUM(NSUInteger, loginTime) {
  */
 @property (copy, nonatomic) NSString *loadUrl;
 @end
+

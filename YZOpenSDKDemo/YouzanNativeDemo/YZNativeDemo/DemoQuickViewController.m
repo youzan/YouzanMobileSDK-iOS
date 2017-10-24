@@ -40,6 +40,9 @@
 
 - (void)receiveLoginRequestFromQuickManager:(YZSQuickDealManager *)manager completionBlock:(void (^)(BOOL))completionBlock
 {
+    /**
+     登录方法(在你使用时，应该换成自己服务器给的接口来获取access_token，cookie)
+     */
     [UnsuggestMethod loginWithOpenUid:@"111009" completionBlock:^(NSDictionary *resultInfo) {
         if (resultInfo) {
             [YZSDK setToken:resultInfo[@"data"][@"access_token"] key:resultInfo[@"data"][@"cookie_key"] value:resultInfo[@"data"][@"cookie_value"]];
@@ -62,3 +65,4 @@
 }
 
 @end
+

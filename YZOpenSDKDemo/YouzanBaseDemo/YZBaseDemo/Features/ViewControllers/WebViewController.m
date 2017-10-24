@@ -8,12 +8,11 @@
 
 #import "WebViewController.h"
 #import "LoginViewController.h"
-//
 #import <YZBaseSDK/YZBaseSDK.h>
 #import <Unsuggest/UnsuggestMethod.h>
-//#import "UnsuggestMethod.h"
 
-@interface WebViewController ()
+
+@interface WebViewController () <UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) UIBarButtonItem *closeBarButtonItem; /**< 关闭按钮 */
 @end
@@ -49,12 +48,30 @@
 
 #pragma mark - UIWebView Delegate
 
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    [YZSDK webViewDidStartLoad:webView];
+}
+
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    [YZSDK initYouzanWithUIWebView:webView];
+    [YZSDK webViewDidFinishLoad:webView];
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    [YZSDK webView:webView didFailLoadWithError:error];
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    
+    BOOL should = [YZSDK webView:webView shouldStartLoadWithRequest:request navigationType:navigationType];
+    if (!should) {
+        return NO;
+    }
+    
+    
     NSURL *url = [request URL];
+    
     YZNotice *noticeFromYZ = [YZSDK noticeFromYouzanWithUrl:url];
     if(noticeFromYZ.notice & YouzanNoticeLogin) {//登录
         if (self.loginTime == kLoginTimeNever) {
@@ -121,6 +138,9 @@
         return;
     }
     
+    /**
+     登录方法(在你使用时，应该换成自己服务器给的接口来获取access_token，cookie)
+     */
     [UnsuggestMethod loginWithOpenUid:[UserModel sharedManage].userId completionBlock:^(NSDictionary *resultInfo) {
         if (resultInfo) {
             //用户登录成功
@@ -133,7 +153,9 @@
 - (void)loadWithString:(NSString *)urlStr {
     NSURL *url = [NSURL URLWithString:urlStr];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-    [self.webView loadRequest:urlRequest];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.webView loadRequest:urlRequest];
+    });
 }
 
 /**
@@ -165,3 +187,4 @@
 }
 
 @end
+

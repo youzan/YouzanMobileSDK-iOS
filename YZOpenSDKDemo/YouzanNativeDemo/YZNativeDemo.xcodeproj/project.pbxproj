@@ -7,21 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18C0D0C827E99D9003B11297 /* libPods-YZNativeDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BB40EAD2E40CB604CFF46E3 /* libPods-YZNativeDemo.a */; };
+		3BAC7E621F9F488700FDEF0E /* Unsuggest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BAC7E611F9F488700FDEF0E /* Unsuggest.framework */; };
 		851953AC1E667B49005BB699 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 851953AB1E667B49005BB699 /* main.m */; };
 		851953AF1E667B49005BB699 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 851953AE1E667B49005BB699 /* AppDelegate.m */; };
 		851953B21E667B49005BB699 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 851953B11E667B49005BB699 /* ViewController.m */; };
 		851953B51E667B49005BB699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 851953B31E667B49005BB699 /* Main.storyboard */; };
 		851953B71E667B49005BB699 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 851953B61E667B49005BB699 /* Assets.xcassets */; };
 		851953BA1E667B49005BB699 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 851953B81E667B49005BB699 /* LaunchScreen.storyboard */; };
-		85214FF81E70F25B00B2652D /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85214FF71E70F25B00B2652D /* PhotosUI.framework */; };
-		852D6E291E67B85C001C6D04 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852D6E281E67B85C001C6D04 /* Photos.framework */; };
 		856329951E669E660081C489 /* DemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 856329941E669E660081C489 /* DemoTableViewController.m */; };
 		85EE57C01E9CF23700FCCEFE /* DemoQuickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EE57BF1E9CF23700FCCEFE /* DemoQuickViewController.m */; };
-		CD8903DF1F28959D00E93981 /* Unsuggest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8903DE1F28959D00E93981 /* Unsuggest.framework */; };
-		CD8903E11F2895A600E93981 /* YZBaseSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8903E01F2895A600E93981 /* YZBaseSDK.framework */; };
-		CD8903E31F2895AF00E93981 /* YZNativeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8903E21F2895AF00E93981 /* YZNativeSDK.framework */; };
 		CD8903E51F2895B900E93981 /* YZNativeRes.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CD8903E41F2895B900E93981 /* YZNativeRes.bundle */; };
-		EFD5509D1E814E9F004F99B4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFD5509C1E814E9F004F99B4 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +34,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2BB40EAD2E40CB604CFF46E3 /* libPods-YZNativeDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YZNativeDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BAC7E611F9F488700FDEF0E /* Unsuggest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unsuggest.framework; path = ../Unsuggest.framework; sourceTree = "<group>"; };
+		65AE6C0A3D38E6E09FB8388D /* Pods-YZNativeDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YZNativeDemo.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-YZNativeDemo/Pods-YZNativeDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		851953A71E667B49005BB699 /* YZNativeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YZNativeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		851953AB1E667B49005BB699 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		851953AD1E667B49005BB699 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -48,19 +47,12 @@
 		851953B61E667B49005BB699 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		851953B91E667B49005BB699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		851953BB1E667B49005BB699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		85214FF71E70F25B00B2652D /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
-		852D6E281E67B85C001C6D04 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		856329931E669E660081C489 /* DemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTableViewController.h; sourceTree = "<group>"; };
 		856329941E669E660081C489 /* DemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTableViewController.m; sourceTree = "<group>"; };
 		85EE57BE1E9CF23700FCCEFE /* DemoQuickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoQuickViewController.h; sourceTree = "<group>"; };
 		85EE57BF1E9CF23700FCCEFE /* DemoQuickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoQuickViewController.m; sourceTree = "<group>"; };
-		8C23D247815F896B8F6F18B5 /* Pods-YZNativeDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YZNativeDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-YZNativeDemo/Pods-YZNativeDemo.release.xcconfig"; sourceTree = "<group>"; };
-		CD8903DE1F28959D00E93981 /* Unsuggest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unsuggest.framework; path = ../Unsuggest.framework; sourceTree = "<group>"; };
-		CD8903E01F2895A600E93981 /* YZBaseSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YZBaseSDK.framework; path = ../../YZBaseSDK/YZBaseSDK.framework; sourceTree = "<group>"; };
-		CD8903E21F2895AF00E93981 /* YZNativeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YZNativeSDK.framework; path = ../../YZNativeSDK/YZNativeSDK.framework; sourceTree = "<group>"; };
 		CD8903E41F2895B900E93981 /* YZNativeRes.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = YZNativeRes.bundle; path = ../../../YZNativeSDK/YZNativeRes.bundle; sourceTree = "<group>"; };
-		EFD5509C1E814E9F004F99B4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		F8FCCAF1BEC53394B1B2A1DE /* Pods-YZNativeDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YZNativeDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YZNativeDemo/Pods-YZNativeDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		D42DE31363765B0DA390553A /* Pods-YZNativeDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YZNativeDemo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-YZNativeDemo/Pods-YZNativeDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,23 +60,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD8903DF1F28959D00E93981 /* Unsuggest.framework in Frameworks */,
-				CD8903E11F2895A600E93981 /* YZBaseSDK.framework in Frameworks */,
-				EFD5509D1E814E9F004F99B4 /* WebKit.framework in Frameworks */,
-				85214FF81E70F25B00B2652D /* PhotosUI.framework in Frameworks */,
-				852D6E291E67B85C001C6D04 /* Photos.framework in Frameworks */,
-				CD8903E31F2895AF00E93981 /* YZNativeSDK.framework in Frameworks */,
+				3BAC7E621F9F488700FDEF0E /* Unsuggest.framework in Frameworks */,
+				18C0D0C827E99D9003B11297 /* libPods-YZNativeDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		601BA8ADB6253665B002E919 /* Pods */ = {
+		1DA5DF63DB7A7A3674D903CA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F8FCCAF1BEC53394B1B2A1DE /* Pods-YZNativeDemo.debug.xcconfig */,
-				8C23D247815F896B8F6F18B5 /* Pods-YZNativeDemo.release.xcconfig */,
+				65AE6C0A3D38E6E09FB8388D /* Pods-YZNativeDemo.debug.xcconfig */,
+				D42DE31363765B0DA390553A /* Pods-YZNativeDemo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -94,8 +82,8 @@
 			children = (
 				851953A91E667B49005BB699 /* YZNativeDemo */,
 				851953A81E667B49005BB699 /* Products */,
-				601BA8ADB6253665B002E919 /* Pods */,
 				D4FEAE16DA96D9B7B3EDC177 /* Frameworks */,
+				1DA5DF63DB7A7A3674D903CA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,12 +127,8 @@
 		D4FEAE16DA96D9B7B3EDC177 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CD8903E21F2895AF00E93981 /* YZNativeSDK.framework */,
-				CD8903E01F2895A600E93981 /* YZBaseSDK.framework */,
-				CD8903DE1F28959D00E93981 /* Unsuggest.framework */,
-				EFD5509C1E814E9F004F99B4 /* WebKit.framework */,
-				85214FF71E70F25B00B2652D /* PhotosUI.framework */,
-				852D6E281E67B85C001C6D04 /* Photos.framework */,
+				3BAC7E611F9F488700FDEF0E /* Unsuggest.framework */,
+				2BB40EAD2E40CB604CFF46E3 /* libPods-YZNativeDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -156,10 +140,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 851953BE1E667B49005BB699 /* Build configuration list for PBXNativeTarget "YZNativeDemo" */;
 			buildPhases = (
+				EC75AFA77FF2571B1645BF89 /* [CP] Check Pods Manifest.lock */,
 				851953A31E667B49005BB699 /* Sources */,
 				851953A41E667B49005BB699 /* Frameworks */,
 				851953A51E667B49005BB699 /* Resources */,
 				852AA0941E729921009B1116 /* Embed Frameworks */,
+				B39DF4C3F1482D36D37C3EA8 /* [CP] Embed Pods Frameworks */,
+				D00683876E2C76B43C293CAB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,6 +204,61 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B39DF4C3F1482D36D37C3EA8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-YZNativeDemo/Pods-YZNativeDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D00683876E2C76B43C293CAB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-YZNativeDemo/Pods-YZNativeDemo-resources.sh",
+				"${PODS_ROOT}/../../YZBaseSDK/YZBaseRes.bundle",
+				"${PODS_ROOT}/../../YZNativeSDK/YZNativeRes.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-YZNativeDemo/Pods-YZNativeDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC75AFA77FF2571B1645BF89 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YZNativeDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		851953A31E667B49005BB699 /* Sources */ = {
@@ -343,7 +385,7 @@
 		};
 		851953BF1E667B49005BB699 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F8FCCAF1BEC53394B1B2A1DE /* Pods-YZNativeDemo.debug.xcconfig */;
+			baseConfigurationReference = 65AE6C0A3D38E6E09FB8388D /* Pods-YZNativeDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RNG6JK98J6;
@@ -358,10 +400,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACH_O_TYPE = mh_execute;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youzan.YZNativeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -369,7 +408,7 @@
 		};
 		851953C01E667B49005BB699 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C23D247815F896B8F6F18B5 /* Pods-YZNativeDemo.release.xcconfig */;
+			baseConfigurationReference = D42DE31363765B0DA390553A /* Pods-YZNativeDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RNG6JK98J6;
@@ -384,10 +423,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACH_O_TYPE = mh_execute;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youzan.YZNativeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

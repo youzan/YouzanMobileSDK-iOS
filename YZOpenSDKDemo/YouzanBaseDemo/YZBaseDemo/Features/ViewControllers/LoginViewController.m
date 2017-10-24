@@ -37,6 +37,11 @@
 }
 
 - (IBAction)login:(id)sender {
+    
+    
+    /**
+     登录方法(在你使用时，应该换成自己服务器给的接口来获取access_token，cookie)
+     */
     [UnsuggestMethod loginWithOpenUid:[UserModel sharedManage].userId completionBlock:^(NSDictionary *resultInfo) {
         if (resultInfo) {
             [YZSDK setToken:resultInfo[@"data"][@"access_token"] key:resultInfo[@"data"][@"cookie_key"] value:resultInfo[@"data"][@"cookie_value"]];
@@ -61,3 +66,4 @@
 }
 
 @end
+

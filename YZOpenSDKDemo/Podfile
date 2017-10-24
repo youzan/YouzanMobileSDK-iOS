@@ -1,0 +1,17 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+workspace 'YZOpenSDK'
+
+target 'YZNativeDemo' do
+  project 'YouzanNativeDemo/YZNativeDemo.xcodeproj'
+
+  pod 'YZAppSDK/Native', :path => '../'
+
+end
+
+target 'YZBaseDemo' do
+  project 'YouzanBaseDemo/YZBaseDemo.xcodeproj'
+  
+  pod 'YZAppSDK/Base', :path => '../'
+
+end

@@ -22,6 +22,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.ios.deployment_target = "7.0"
+  s.xcconfig = { 'OTHER_LDFLAGS' => '-lc++' }
   s.default_subspec = 'Base'
   s.subspec 'Base' do |base|
     base.ios.vendored_framework = 'YZBaseSDK/YZBaseSDK.framework'

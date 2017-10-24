@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BAC7E601F9F488000FDEF0E /* Unsuggest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BAC7E5F1F9F488000FDEF0E /* Unsuggest.framework */; };
+		65D06EBBA059A1E8E8D15E2F /* libPods-YZBaseDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BAFB31CCA2DEDF86A6D4CA /* libPods-YZBaseDemo.a */; };
 		8711DFE91F03C35B00E1889F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFCF1F03C35B00E1889F /* AppDelegate.m */; };
 		8711DFEA1F03C35B00E1889F /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFD41F03C35B00E1889F /* UserModel.m */; };
 		8711DFEB1F03C35B00E1889F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFD71F03C35B00E1889F /* LoginViewController.m */; };
@@ -19,11 +21,12 @@
 		8711DFF21F03C35B00E1889F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8711DFE31F03C35B00E1889F /* LaunchScreen.xib */; };
 		8711DFF31F03C35B00E1889F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFE41F03C35B00E1889F /* main.m */; };
 		8711DFF41F03C35B00E1889F /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFE81F03C35B00E1889F /* UIViewController+BackButtonHandler.m */; };
-		CD8903DB1F28951900E93981 /* Unsuggest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8903DA1F28951900E93981 /* Unsuggest.framework */; };
-		CD8903DD1F28952500E93981 /* YZBaseSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8903DC1F28952500E93981 /* YZBaseSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C3B76973A4AFB6B6E8C4131 /* Pods-YZBaseDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YZBaseDemo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-YZBaseDemo/Pods-YZBaseDemo.release.xcconfig"; sourceTree = "<group>"; };
+		3BAC7E5F1F9F488000FDEF0E /* Unsuggest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unsuggest.framework; path = ../Unsuggest.framework; sourceTree = "<group>"; };
+		46BAFB31CCA2DEDF86A6D4CA /* libPods-YZBaseDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YZBaseDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		721F56F81AF0A2A8009F5766 /* YZBaseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YZBaseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8711DFCE1F03C35B00E1889F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8711DFCF1F03C35B00E1889F /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -43,8 +46,7 @@
 		8711DFE41F03C35B00E1889F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8711DFE71F03C35B00E1889F /* UIViewController+BackButtonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButtonHandler.h"; sourceTree = "<group>"; };
 		8711DFE81F03C35B00E1889F /* UIViewController+BackButtonHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButtonHandler.m"; sourceTree = "<group>"; };
-		CD8903DA1F28951900E93981 /* Unsuggest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unsuggest.framework; path = ../Unsuggest.framework; sourceTree = "<group>"; };
-		CD8903DC1F28952500E93981 /* YZBaseSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YZBaseSDK.framework; path = ../../YZBaseSDK/YZBaseSDK.framework; sourceTree = "<group>"; };
+		C30074E82F44C5EB3FA63ABA /* Pods-YZBaseDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YZBaseDemo.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-YZBaseDemo/Pods-YZBaseDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD8903DB1F28951900E93981 /* Unsuggest.framework in Frameworks */,
-				CD8903DD1F28952500E93981 /* YZBaseSDK.framework in Frameworks */,
+				3BAC7E601F9F488000FDEF0E /* Unsuggest.framework in Frameworks */,
+				65D06EBBA059A1E8E8D15E2F /* libPods-YZBaseDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +68,7 @@
 				8711DFCD1F03C35B00E1889F /* YZBaseDemo */,
 				721F56F91AF0A2A8009F5766 /* Products */,
 				8711DF7B1F03B9A600E1889F /* Frameworks */,
+				EFA60C0C3AB27694D761EB7D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,8 +83,8 @@
 		8711DF7B1F03B9A600E1889F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CD8903DC1F28952500E93981 /* YZBaseSDK.framework */,
-				CD8903DA1F28951900E93981 /* Unsuggest.framework */,
+				3BAC7E5F1F9F488000FDEF0E /* Unsuggest.framework */,
+				46BAFB31CCA2DEDF86A6D4CA /* libPods-YZBaseDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -183,6 +186,15 @@
 			path = Categoary;
 			sourceTree = "<group>";
 		};
+		EFA60C0C3AB27694D761EB7D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C30074E82F44C5EB3FA63ABA /* Pods-YZBaseDemo.debug.xcconfig */,
+				0C3B76973A4AFB6B6E8C4131 /* Pods-YZBaseDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -190,9 +202,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 721F571B1AF0A2A8009F5766 /* Build configuration list for PBXNativeTarget "YZBaseDemo" */;
 			buildPhases = (
+				68D70AD2C7365E677E9E88F6 /* [CP] Check Pods Manifest.lock */,
 				721F56F41AF0A2A8009F5766 /* Sources */,
 				721F56F51AF0A2A8009F5766 /* Frameworks */,
 				721F56F61AF0A2A8009F5766 /* Resources */,
+				D7BC53A1F0CB233CB9CC8030 /* [CP] Embed Pods Frameworks */,
+				91730643EDEDD901D476BE3C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +265,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		68D70AD2C7365E677E9E88F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YZBaseDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91730643EDEDD901D476BE3C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-YZBaseDemo/Pods-YZBaseDemo-resources.sh",
+				"${PODS_ROOT}/../../YZBaseSDK/YZBaseRes.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-YZBaseDemo/Pods-YZBaseDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7BC53A1F0CB233CB9CC8030 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-YZBaseDemo/Pods-YZBaseDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		721F56F41AF0A2A8009F5766 /* Sources */ = {
@@ -358,6 +427,7 @@
 		};
 		721F571C1AF0A2A8009F5766 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C30074E82F44C5EB3FA63ABA /* Pods-YZBaseDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -374,16 +444,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				New_Setting = "";
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"ImageIO\"",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youzan.h5SDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -392,6 +453,7 @@
 		};
 		721F571D1AF0A2A8009F5766 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C3B76973A4AFB6B6E8C4131 /* Pods-YZBaseDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -408,16 +470,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				New_Setting = "";
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"ImageIO\"",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youzan.h5SDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

@@ -16,3 +16,4 @@ typedef void (^LoginResultBlock)(BOOL success);
 @property (copy, nonatomic) LoginResultBlock loginBlock;
 
 @end
+
