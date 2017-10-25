@@ -44,6 +44,8 @@
 - (void)dealloc {
     //Demo中 退出当前controller就清除用户登录信息
     [YZSDK logout];
+    _webView.delegate = nil;
+    _webView = nil;
 }
 
 #pragma mark - UIWebView Delegate
