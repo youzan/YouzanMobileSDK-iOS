@@ -6,11 +6,10 @@
 //
 
 #import "AppDelegate.h"
-//#import <YZBase/YZBase.h>
+#import <Unsuggest/UnsuggestMethod.h>
 #import <YZBaseSDK/YZBaseSDK.h>
 
-static NSString *CLIENT_ID = @"demo";/**< 测试专用clientId */
-static NSString *SCHEME = @"hahahehe";/**< demo 的 scheme */
+static NSString *const SCHEME = @"yzbasedemo";/**< demo 的 scheme */
 
 @interface AppDelegate ()
 
@@ -24,7 +23,7 @@ static NSString *SCHEME = @"hahahehe";/**< demo 的 scheme */
     NSLog(@"%@", [YZSDK semanticVersion]);
     
     // 关闭 sdk 的 log 输出
-    [YZSDK setOpenDebugLog:YES];
+    [YZSDK setOpenDebugLog:NO];
     [YZSDK setUpWithClientId:CLIENT_ID];
     [YZSDK setScheme:SCHEME];
     return YES;

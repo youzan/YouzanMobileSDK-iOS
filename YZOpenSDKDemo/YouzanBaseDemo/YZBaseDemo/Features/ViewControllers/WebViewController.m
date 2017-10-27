@@ -23,6 +23,7 @@
     [super viewDidLoad];
     //
     self.title = @"UIWebView";
+    self.webView.delegate = self;
     [self initBarButtonItem];
     self.navigationItem.rightBarButtonItem.enabled = NO;//默认分享按钮不可用
     

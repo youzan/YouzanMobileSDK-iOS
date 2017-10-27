@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString * const YourUserAgent;
+extern NSString *const CLIENT_SECRET;
+extern NSString *const CLIENT_ID;
+
 /**
- 该类是登录请求服务类，用户实际使用时，应该从自己服务器获取token cookie 等认证信息，不建议使用这个类来进行获取。
+  该类是登录请求服务类，用户实际使用时，应该从自己服务器获取token cookie 等认证信息，不建议使用这个类来进行获取。
  */
 @interface UnsuggestMethod : NSObject
 
