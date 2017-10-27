@@ -1,6 +1,6 @@
 PODS:
-  - YZAppSDK/Base (5.3.0)
-  - YZAppSDK/Native (5.3.0):
+  - YZAppSDK/Base (5.3.1)
+  - YZAppSDK/Native (5.3.1):
     - YZAppSDK/Base
 
 DEPENDENCIES:
@@ -12,7 +12,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  YZAppSDK: 40aecc2a04c008632853acc09078f3814ae67a44
+  YZAppSDK: c6463b2acb7f3111f3a2d2bd067444e57a4c9790
 
 PODFILE CHECKSUM: 37699b495200c7dcc091edf7c5c780a90b897880
 

@@ -32,7 +32,7 @@
     WebViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"WebViewController"];
     vc.loginTime = indexPath.row;
     //目前支持有赞的店铺主页链接、商品详情链接、商品列表链接、订单列表、会员中心等
-    vc.loadUrl = @"https://h5.youzan.com/v2/showcase/homepage?alias=juhos0";
+    vc.loadUrl = @"https://h5.youzan.com/v2/goods/2xf7l0ac9y9m8";
     [self.navigationController pushViewController:vc animated:YES];
 }
 

@@ -10,7 +10,7 @@
 #import <YZBaseSDK/YZBaseSDK.h>
 
 static NSString *CLIENT_ID = @"demo";/**< 测试专用clientId */
-static NSString *SCHEME = @"yzbasedemo";/**< demo 的 scheme */
+static NSString *SCHEME = @"hahahehe";/**< demo 的 scheme */
 
 @interface AppDelegate ()
 
