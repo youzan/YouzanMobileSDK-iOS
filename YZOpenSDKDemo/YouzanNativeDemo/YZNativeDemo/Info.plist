@@ -25,7 +25,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>yzsdknd</string>
+				<string>yznativedemo</string>
 			</array>
 		</dict>
 	</array>

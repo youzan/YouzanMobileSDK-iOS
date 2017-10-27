@@ -24,7 +24,10 @@
     
     [YZSDK logout];
     // step1: 设置clientId
-    [YZSDK setUpWithClientId:YourUserAgent];
+    [YZSDK setUpWithClientId:CLIENT_ID];
+    // 设置 scheme, 微信支付后可以跳回应用
+    NSString* scheme = [[[NSBundle mainBundle].infoDictionary[@"CFBundleURLTypes"] firstObject][@"CFBundleURLSchemes"] firstObject];
+    [YZSDK setScheme:scheme];
     _rootURLPath = @"https://h5.koudaitong.com/v2/showcase/homepage?alias=juhos0";
     
     /**
@@ -40,11 +43,9 @@
     
 }
 
-- (void)toutou {
+- (void)touchShareButton:(id)sender {
     [[YZNViewManager defaultManager] shareViewController:self.navigationController.viewControllers.lastObject
-                                          withShareBlock:^(NSString * _Nonnull title, NSURL * _Nonnull shareURL, NSURL * _Nullable imageURL) {
-                                              NSLog(@"%@%@%@", title, shareURL, imageURL);
-                                          }];
+                                          withShareBlock:nil];
 }
 
 // method1: 处理登录请求
@@ -81,7 +82,7 @@
         vc.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"分享"
                                                                                 style:UIBarButtonItemStyleDone
                                                                                target:self
-                                                                               action:@selector(toutou)];
+                                                                               action:@selector(touchShareButton:)];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
