@@ -28,7 +28,7 @@
     // 设置 scheme, 微信支付后可以跳回应用
     NSString* scheme = [[[NSBundle mainBundle].infoDictionary[@"CFBundleURLTypes"] firstObject][@"CFBundleURLSchemes"] firstObject];
     [YZSDK setScheme:scheme];
-    _rootURLPath = @"https://h5.koudaitong.com/v2/showcase/homepage?alias=juhos0";
+    _rootURLPath = @"https://h5.youzan.com/v2/goods/2xf7l0ac9y9m8";
     
     /**
      登录方法(在你使用时，应该换成自己服务器给的接口来获取access_token，cookie)

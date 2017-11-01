@@ -17,7 +17,6 @@
 		851953BA1E667B49005BB699 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 851953B81E667B49005BB699 /* LaunchScreen.storyboard */; };
 		856329951E669E660081C489 /* DemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 856329941E669E660081C489 /* DemoTableViewController.m */; };
 		85EE57C01E9CF23700FCCEFE /* DemoQuickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EE57BF1E9CF23700FCCEFE /* DemoQuickViewController.m */; };
-		CD8903E51F2895B900E93981 /* YZNativeRes.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CD8903E41F2895B900E93981 /* YZNativeRes.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,7 +50,6 @@
 		856329941E669E660081C489 /* DemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTableViewController.m; sourceTree = "<group>"; };
 		85EE57BE1E9CF23700FCCEFE /* DemoQuickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoQuickViewController.h; sourceTree = "<group>"; };
 		85EE57BF1E9CF23700FCCEFE /* DemoQuickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoQuickViewController.m; sourceTree = "<group>"; };
-		CD8903E41F2895B900E93981 /* YZNativeRes.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = YZNativeRes.bundle; path = ../../../YZNativeSDK/YZNativeRes.bundle; sourceTree = "<group>"; };
 		D42DE31363765B0DA390553A /* Pods-YZNativeDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YZNativeDemo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-YZNativeDemo/Pods-YZNativeDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,7 +96,6 @@
 		851953A91E667B49005BB699 /* YZNativeDemo */ = {
 			isa = PBXGroup;
 			children = (
-				CD8903E41F2895B900E93981 /* YZNativeRes.bundle */,
 				851953AD1E667B49005BB699 /* AppDelegate.h */,
 				851953AE1E667B49005BB699 /* AppDelegate.m */,
 				851953B01E667B49005BB699 /* ViewController.h */,
@@ -198,7 +195,6 @@
 			files = (
 				851953BA1E667B49005BB699 /* LaunchScreen.storyboard in Resources */,
 				851953B71E667B49005BB699 /* Assets.xcassets in Resources */,
-				CD8903E51F2895B900E93981 /* YZNativeRes.bundle in Resources */,
 				851953B51E667B49005BB699 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
