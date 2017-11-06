@@ -309,9 +309,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-YZBaseDemo/Pods-YZBaseDemo-frameworks.sh",
+				"${PODS_ROOT}/../../YZBaseSDK/YZBaseSDK.framework",
+				"${PODS_ROOT}/../../YZSDKCore/YZSDKCore.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YZBaseSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YZSDKCore.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -19,13 +19,15 @@ static NSString *const SCHEME = @"yzbasedemo";/**< demo 的 scheme */
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    // 查看 sdk 的版本
-    NSLog(@"%@", [YZSDK semanticVersion]);
+    // 初始化sdk
+    YZConfig *conf = [[YZConfig alloc] initWithClientId:CLIENT_ID];
+    conf.enableLog = NO; // 关闭 sdk 的 log 输出
+    conf.scheme = SCHEME; // 配置 scheme 以便微信支付完成后跳转
+    [YZSDK.shared initializeSDKWithConfig:conf];
     
-    // 关闭 sdk 的 log 输出
-    [YZSDK setOpenDebugLog:NO];
-    [YZSDK setUpWithClientId:CLIENT_ID];
-    [YZSDK setScheme:SCHEME];
+    // 查看 sdk 的版本
+    NSLog(@"%@", YZSDK.shared.version);
+
     return YES;
 }
 

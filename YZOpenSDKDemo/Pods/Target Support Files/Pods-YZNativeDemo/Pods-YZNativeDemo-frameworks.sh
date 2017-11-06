@@ -100,6 +100,17 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${PODS_ROOT}/../../YZBaseSDK/YZBaseSDK.framework"
+  install_framework "${PODS_ROOT}/../../YZSDKCore/YZSDKCore.framework"
+  install_framework "${PODS_ROOT}/../../YZNativeSDK/YZNativeSDK.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${PODS_ROOT}/../../YZBaseSDK/YZBaseSDK.framework"
+  install_framework "${PODS_ROOT}/../../YZSDKCore/YZSDKCore.framework"
+  install_framework "${PODS_ROOT}/../../YZNativeSDK/YZNativeSDK.framework"
+fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
 fi

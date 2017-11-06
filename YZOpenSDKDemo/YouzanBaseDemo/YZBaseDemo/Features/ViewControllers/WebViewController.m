@@ -12,8 +12,8 @@
 #import <Unsuggest/UnsuggestMethod.h>
 
 
-@interface WebViewController () <UIWebViewDelegate>
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@interface WebViewController () <YZWebViewDelegate>
+@property (weak, nonatomic) IBOutlet YZWebView *webView;
 @property (strong, nonatomic) UIBarButtonItem *closeBarButtonItem; /**< 关闭按钮 */
 @end
 
@@ -44,76 +44,71 @@
 
 - (void)dealloc {
     //Demo中 退出当前controller就清除用户登录信息
-    [YZSDK logout];
+    [YZSDK.shared logout];
     _webView.delegate = nil;
     _webView = nil;
 }
 
-#pragma mark - UIWebView Delegate
+#pragma mark - YZWebViewDelegate
 
-- (void)webViewDidStartLoad:(UIWebView *)webView
+- (void)webView:(YZWebView *)webView didReceiveNotice:(YZNotice *)notice
 {
-    [YZSDK webViewDidStartLoad:webView];
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-    [YZSDK webViewDidFinishLoad:webView];
-}
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
-{
-    [YZSDK webView:webView didFailLoadWithError:error];
-}
-
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     
-    BOOL should = [YZSDK webView:webView shouldStartLoadWithRequest:request navigationType:navigationType];
-    if (!should) {
-        return NO;
-    }
-
-    
-    NSURL *url = [request URL];
-    
-    YZNotice *noticeFromYZ = [YZSDK noticeFromYouzanWithUrl:url];
-    if(noticeFromYZ.notice & YouzanNoticeLogin) {//登录
-        if (self.loginTime == kLoginTimeNever) {
-            return NO;
+    switch (notice.type) {
+        case YZNoticeTypeLogin: // 收到登陆请求
+        {
+            [self showLoginViewControllerIfNeeded];
+            break;
         }
-        [self presentNativeLoginViewWithBlock:^(BOOL success){
-            if (success) {
-                [webView reload];
-            } else {
-                if ([webView canGoBack]) {
-                    [webView goBack];
-                }
-            };
-        }];
-        return NO;
-    } else if(noticeFromYZ.notice & YouzanNoticeShare) {//分享
-        [self alertShareData:noticeFromYZ.response];
-        return NO;
-    } else if(noticeFromYZ.notice & YouzanNoticeReady) {//有赞环境初始化成功，分享按钮可用
-        self.navigationItem.rightBarButtonItem.enabled = YES;
-        return NO;
-    } else if (noticeFromYZ.notice & IsYouzanNotice) {
-        return NO;
+        case YZNoticeTypeShare: // 收到分享的回调数据
+        {
+            [self alertShareData:notice.response];
+            break;
+        }
+        case YZNoticeTypeReady: // Web页面已准备好，可以调用分享接口
+        {
+            self.navigationItem.rightBarButtonItem.enabled = YES;
+            break;
+        }
+        default:
+            break;
     }
-    
+}
+
+- (BOOL)webView:(YZWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
     //加载新链接时，分享按钮先置为不可用，直到有赞环境初始化成功方可使用
     self.navigationItem.rightBarButtonItem.enabled = NO;
-    
+    // 不做任何筛选
     return YES;
 }
 
 #pragma mark - Action
 
+- (void)showLoginViewControllerIfNeeded
+{
+    if (self.loginTime == kLoginTimeNever) {
+        return;
+    }
+    __weak typeof(self) weakSelf = self;
+    [self presentNativeLoginViewWithBlock:^(BOOL success){
+        if (success) {
+            [weakSelf.webView reload];
+        } else {
+            if ([weakSelf.webView canGoBack]) {
+                [weakSelf.webView goBack];
+            }
+        };
+    }];
+}
+
 - (void)shareButtonAction {
-    [YZSDK shareActionWithUIWebView:self.webView];
+    [self.webView share];
 }
 - (void)reloadButtonAction {
     [self.webView reload];
 }
+
 - (void)closeItemBarButtonAction {
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -147,7 +142,9 @@
     [UnsuggestMethod loginWithOpenUid:[UserModel sharedManage].userId completionBlock:^(NSDictionary *resultInfo) {
         if (resultInfo) {
             //用户登录成功
-            [YZSDK setToken:resultInfo[@"data"][@"access_token"] key:resultInfo[@"data"][@"cookie_key"] value:resultInfo[@"data"][@"cookie_value"]];
+            [YZSDK.shared synchronizeAccessToken:resultInfo[@"data"][@"access_token"]
+                                       cookieKey:resultInfo[@"data"][@"cookie_key"]
+                                     cookieValue:resultInfo[@"data"][@"cookie_value"]];
             [self loadWithString:urlString];
         }
     }];

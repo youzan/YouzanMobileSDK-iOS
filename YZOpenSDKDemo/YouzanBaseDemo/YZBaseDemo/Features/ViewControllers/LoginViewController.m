@@ -44,7 +44,9 @@
      */
     [UnsuggestMethod loginWithOpenUid:[UserModel sharedManage].userId completionBlock:^(NSDictionary *resultInfo) {
         if (resultInfo) {
-            [YZSDK setToken:resultInfo[@"data"][@"access_token"] key:resultInfo[@"data"][@"cookie_key"] value:resultInfo[@"data"][@"cookie_value"]];
+            [YZSDK.shared synchronizeAccessToken:resultInfo[@"data"][@"access_token"]
+                                       cookieKey:resultInfo[@"data"][@"cookie_key"]
+                                     cookieValue:resultInfo[@"data"][@"cookie_value"]];
             [self dismissViewControllerAnimated:YES completion:^{
                 [self callBlockWithResult:YES];
             }];

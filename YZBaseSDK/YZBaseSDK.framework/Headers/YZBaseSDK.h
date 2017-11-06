@@ -15,6 +15,9 @@ FOUNDATION_EXPORT double YZBaseVersionNumber;
 FOUNDATION_EXPORT const unsigned char YZBaseVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <YZBase/PublicHeader.h>
-#import "YZSDK.h"
 
+#import <YZBaseSDK/YZSDK.h>
+#import <YZBaseSDK/YZConfig.h>
+#import <YZBaseSDK/YZWebView.h>
+#import <YZBaseSDK/YZNotice.h>
 

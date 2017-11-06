@@ -22,12 +22,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [YZSDK logout];
-    // step1: 设置clientId
-    [YZSDK setUpWithClientId:CLIENT_ID];
-    // 设置 scheme, 微信支付后可以跳回应用
+    [YZSDK.shared logout];
+    // 初始化sdk
+    YZConfig *conf = [[YZConfig alloc] initWithClientId:CLIENT_ID];
+    conf.enableLog = NO; // 关闭 sdk 的 log 输出
     NSString* scheme = [[[NSBundle mainBundle].infoDictionary[@"CFBundleURLTypes"] firstObject][@"CFBundleURLSchemes"] firstObject];
-    [YZSDK setScheme:scheme];
+    conf.scheme = scheme; // 配置 scheme 以便微信支付完成后跳转
+    [YZSDK.shared initializeSDKWithConfig:conf];
+    
+    // 查看 sdk 的版本
+    NSLog(@"%@", YZSDK.shared.version);
+    
     _rootURLPath = @"https://h5.youzan.com/v2/goods/2xf7l0ac9y9m8";
     
     /**
@@ -35,7 +40,10 @@
      */
     [UnsuggestMethod loginWithOutUserStateCompletionBlock:^(NSDictionary *resultInfo) {
         if (resultInfo) {
-            [YZSDK setToken:resultInfo[@"data"][@"access_token"] key:nil value:nil];
+            [YZSDK.shared synchronizeAccessToken:resultInfo[@"data"][@"access_token"]
+                                       cookieKey:nil
+                                     cookieValue:nil];
+
         }
     }];
     // setp2: 设置 manager 代理
@@ -57,7 +65,10 @@
      */
     [UnsuggestMethod loginWithOpenUid:@"123456" completionBlock:^(NSDictionary *resultInfo) {
         if (resultInfo) {
-            [YZSDK setToken:resultInfo[@"data"][@"access_token"] key:resultInfo[@"data"][@"cookie_key"] value:resultInfo[@"data"][@"cookie_value"]];
+            [YZSDK.shared synchronizeAccessToken:resultInfo[@"data"][@"access_token"]
+                                       cookieKey:resultInfo[@"data"][@"cookie_key"]
+                                     cookieValue:resultInfo[@"data"][@"cookie_value"]];
+
             dispatch_async(dispatch_get_main_queue(), ^{
                 [manager userDidLogin:YES];
             });
