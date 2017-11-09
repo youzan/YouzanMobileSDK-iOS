@@ -153,9 +153,13 @@
 - (void)loadWithString:(NSString *)urlStr {
     NSURL *url = [NSURL URLWithString:urlStr];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-    dispatch_async(dispatch_get_main_queue(), ^{
+    if ([NSThread isMainThread]) {
         [self.webView loadRequest:urlRequest];
-    });
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.webView loadRequest:urlRequest];
+        });
+    }
 }
 
 /**
