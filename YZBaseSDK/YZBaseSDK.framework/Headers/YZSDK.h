@@ -1,58 +1,35 @@
 //
 //  YZSDK.h
-//  YZSDK
+//  YZBaseSDK
 //
-//  Created by kele on 15/11/19.
-//  Copyright (c) 2015年 Youzan. All rights reserved.
+//  Created by Pan on 2017/10/26.
+//  Copyright © 2017年 Youzan. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+
+@class YZConfig;
 
 NS_ASSUME_NONNULL_BEGIN
+
 /*!
- @header
  有赞云 AppSDK 通用信息管理。处理 webview 交互以及 cookie 和 token 的设置。
  */
-
-
-// webview 中可能收到的通知类型
-typedef NS_OPTIONS(NSUInteger, YouzanNotice) {
-    NotYouzanNotice      = (1 << 0), //非有赞的
-    IsYouzanNotice       = (1 << 1), //
-    YouzanNoticeLogin    = (1 << 2), //登录通知
-    YouzanNoticeShare    = (1 << 3), //分享数据的通知
-    YouzanNoticeReady    = (1 << 4), //交互环境初始化成功的通知
-    YouzanNoticeWXWapPay = (1 << 5), //已废弃
-    YouzanNoticeOther    = (1 << 6), //无效通知
-};
-
-@interface YZNotice : NSObject
-@property (assign, nonatomic) YouzanNotice notice;
-@property (nullable, strong, nonatomic) id response;
-@end
-
-
 @interface YZSDK : NSObject
 
-@property (nullable, nonatomic, copy, readonly) NSString *accessToken;
+@property (class, readonly, strong) YZSDK *shared;
 
-+ (instancetype)sharedInstance;
-+ (NSString *)semanticVersion;
-
-/**
- 设置 client id
-
- @param clientId 从有赞云平台申请到的 client_id
- */
-+ (void)setUpWithClientId:(NSString *)clientId;
+@property (nonatomic, readonly, nullable) NSString *accessToken; /**< 正在使用的 access_token */
+@property (nonatomic, readonly) YZConfig *config; /**< SDK 的配置*/
+@property (nonatomic, readonly) NSString *version;/**< SDK 版本号*/
 
 /**
- 设置你 App 的 Scheme, 设置后调用 h5 微信支付才能跳转回您的 App.
+ 初始化 SDK. 使用 SDK 前必须先初始化 SDK.
  
- @param scheme App 的 Scheme, 例如: wechat
+ @param config 初始化配置。
+ @see YZSDKConfig
  */
-+ (void)setScheme:(NSString *)scheme;
+- (void)initializeSDKWithConfig:(YZConfig *)config;
 
 /*!
  APP用户登录成功后设置。
@@ -67,78 +44,37 @@ typedef NS_OPTIONS(NSUInteger, YouzanNotice) {
  @param key cookie_key
  @param value cookie_value
  */
-+ (void)setToken:(NSString *)token key:(nullable NSString *)key value:(nullable NSString *)value;
+- (void)synchronizeAccessToken:(NSString *)token
+                     cookieKey:(nullable NSString *)key
+                   cookieValue:(nullable NSString *)value;
 
 /*!
  APP用户登出,清除token、cookie等
  */
-+ (void)logout;
-
-/*!
- *  是否开启日志【必须在debug模式下才有效，release模式下无效】
- *
- *  @param open YES是开启，NO是关闭
- */
-+ (void)setOpenDebugLog:(BOOL)open;
-
-#pragma mark - WebView 相关
-
-/*!
- *  解析有赞的回调事件
- *
- *  @param url 当前传入的url参数
- */
-+ (YZNotice *)noticeFromYouzanWithUrl:(NSURL *)url;
-
-/**
- SDK 实现的 WebView Delegate. 必须实现！
- 在你的 WebView 的对应代理方法中调用此方法
- 
- @param webView webView
- */
-+ (void)webViewDidStartLoad:(UIWebView *)webView;
-
-/**
- SDK 实现的 WebView Delegate. 必须实现！
- 在你的 WebView 的对应代理方法中调用此方法
- 
- @param webView webView
- */
-+ (void)webViewDidFinishLoad:(UIWebView *)webView;
-
-/**
- SDK 实现的 WebView Delegate. 必须实现！
- 在你的 WebView 的对应代理方法中调用此方法
- 
- @param webView webView
- */
-+ (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error;
-
-/**
- SDK 实现的 WebView Delegate. 必须实现！
- 某些请求可能不需要跳转，例如后退到发起微信支付页面，会导致循环跳转到微信的问题。
- 在webview对应的代理方法中调用此方法，可以帮助你防止这些问题的发生。
-
- @param webView webView
- @param request request
- @param navigationType navigationType
- @return 是否应该load当前request。YES 表示 request 没问题，可以正常跳转，NO 表示不建议跳转。你可以在 webView 的对应方法中直接返回这个值。
- */
-+ (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request
- navigationType:(UIWebViewNavigationType)navigationType;
-
-/*!
- *  触发分享操作
- *
- *  @param webView webview
- */
-+ (void)shareActionWithUIWebView:(UIWebView *)webView;
+- (void)logout;
 
 @end
 
+@class YZNotice;
 @interface YZSDK (deprecated)
-+ (void)initYouzanWithUIWebView:(UIWebView *)webView NS_DEPRECATED_IOS(2_0, 2_0, "use webViewDidFinishLoad instead");
-+ (void)setUserAgent:(NSString *)userAgent NS_DEPRECATED_IOS(2_0, 2_0, "use setUpWithClientId instead");
++ (instancetype)sharedInstance NS_DEPRECATED_IOS(2_0, 2_0, "use +shared instead");
++ (NSString *)semanticVersion NS_DEPRECATED_IOS(2_0, 2_0, "use YZSDK.shared.version instead");
++ (void)setScheme:(NSString *)scheme NS_DEPRECATED_IOS(2_0, 2_0, "use -initializeSDKWithConfig instead");
++ (void)setUserAgent:(NSString *)userAgent NS_DEPRECATED_IOS(2_0, 2_0, "use -initializeSDKWithConfig instead");
++ (void)setUpWithClientId:(NSString *)clientId NS_DEPRECATED_IOS(2_0, 2_0, "use -initializeSDKWithConfig instead");
++ (void)setToken:(NSString *)token
+             key:(nullable NSString *)key
+           value:(nullable NSString *)value NS_DEPRECATED_IOS(2_0, 2_0, "use -synchronizeAccessToken:cookieKey:cookieValue: instead");
++ (void)logout NS_DEPRECATED_IOS(2_0, 2_0, "use -logout instead");
++ (void)setOpenDebugLog:(BOOL)open NS_DEPRECATED_IOS(2_0, 2_0, "use -initializeSDKWithConfig instead");
++ (void)initYouzanWithUIWebView:(UIWebView *)webView NS_DEPRECATED_IOS(2_0, 2_0, "use YZWebView instead");
++ (YZNotice *)noticeFromYouzanWithUrl:(NSURL *)url NS_DEPRECATED_IOS(2_0, 2_0, "use YZWebViewDelegate instead");
++ (void)webViewDidStartLoad:(UIWebView *)webView NS_DEPRECATED_IOS(2_0, 2_0, "use YZWebView instead");
++ (void)webViewDidFinishLoad:(UIWebView *)webView NS_DEPRECATED_IOS(2_0, 2_0, "use YZWebView instead");
++ (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error NS_DEPRECATED_IOS(2_0, 2_0, "use YZWebView instead");
++ (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request
+ navigationType:(UIWebViewNavigationType)navigationType NS_DEPRECATED_IOS(2_0, 2_0, "use YZWebView instead");
++ (void)shareActionWithUIWebView:(UIWebView *)webView NS_DEPRECATED_IOS(2_0, 2_0, "use YZWebView -share instead");
 @end
 
 NS_ASSUME_NONNULL_END

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3BAC7E601F9F488000FDEF0E /* Unsuggest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BAC7E5F1F9F488000FDEF0E /* Unsuggest.framework */; };
+		3BBB2F7D1FB43B0E00D4BBA5 /* YZSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBB2F7C1FB43B0E00D4BBA5 /* YZSDKCore.framework */; };
+		3BBB2F7E1FB43B0E00D4BBA5 /* YZSDKCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBB2F7C1FB43B0E00D4BBA5 /* YZSDKCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		65D06EBBA059A1E8E8D15E2F /* libPods-YZBaseDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BAFB31CCA2DEDF86A6D4CA /* libPods-YZBaseDemo.a */; };
 		8711DFE91F03C35B00E1889F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFCF1F03C35B00E1889F /* AppDelegate.m */; };
 		8711DFEA1F03C35B00E1889F /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFD41F03C35B00E1889F /* UserModel.m */; };
@@ -23,9 +25,24 @@
 		8711DFF41F03C35B00E1889F /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFE81F03C35B00E1889F /* UIViewController+BackButtonHandler.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3BBB2F7F1FB43B0E00D4BBA5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3BBB2F7E1FB43B0E00D4BBA5 /* YZSDKCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0C3B76973A4AFB6B6E8C4131 /* Pods-YZBaseDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YZBaseDemo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-YZBaseDemo/Pods-YZBaseDemo.release.xcconfig"; sourceTree = "<group>"; };
 		3BAC7E5F1F9F488000FDEF0E /* Unsuggest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unsuggest.framework; path = ../Unsuggest.framework; sourceTree = "<group>"; };
+		3BBB2F7C1FB43B0E00D4BBA5 /* YZSDKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YZSDKCore.framework; path = ../../YZBaseSDK/YZSDKCore.framework; sourceTree = "<group>"; };
 		46BAFB31CCA2DEDF86A6D4CA /* libPods-YZBaseDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YZBaseDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		721F56F81AF0A2A8009F5766 /* YZBaseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YZBaseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8711DFCE1F03C35B00E1889F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -54,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BBB2F7D1FB43B0E00D4BBA5 /* YZSDKCore.framework in Frameworks */,
 				3BAC7E601F9F488000FDEF0E /* Unsuggest.framework in Frameworks */,
 				65D06EBBA059A1E8E8D15E2F /* libPods-YZBaseDemo.a in Frameworks */,
 			);
@@ -65,6 +83,7 @@
 		721F56EF1AF0A2A8009F5766 = {
 			isa = PBXGroup;
 			children = (
+				3BBB2F7C1FB43B0E00D4BBA5 /* YZSDKCore.framework */,
 				8711DFCD1F03C35B00E1889F /* YZBaseDemo */,
 				721F56F91AF0A2A8009F5766 /* Products */,
 				8711DF7B1F03B9A600E1889F /* Frameworks */,
@@ -208,6 +227,7 @@
 				721F56F61AF0A2A8009F5766 /* Resources */,
 				D7BC53A1F0CB233CB9CC8030 /* [CP] Embed Pods Frameworks */,
 				91730643EDEDD901D476BE3C /* [CP] Copy Pods Resources */,
+				3BBB2F7F1FB43B0E00D4BBA5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -309,9 +329,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-YZBaseDemo/Pods-YZBaseDemo-frameworks.sh",
+				"${PODS_ROOT}/../../YZBaseSDK/YZBaseSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YZBaseSDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

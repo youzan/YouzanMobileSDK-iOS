@@ -1,0 +1,6 @@
+framework module YZSDKCore {
+  umbrella header "YZSDKCore.h"
+
+  export *
+  module * { export * }
+}
