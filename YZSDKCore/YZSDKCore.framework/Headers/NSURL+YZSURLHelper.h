@@ -12,9 +12,9 @@
  */
 @interface NSURL (YZSURLHelper)
 
-@property (nonatomic, strong) NSDictionary *parameters;
+@property (nonatomic, strong) NSDictionary *yz_parameters;
 
-- (NSString *)parameterForKey:(NSString *)key;
+- (NSString *)yz_parameterForKey:(NSString *)key;
 
 // 支持下标语法
 - (NSString *)objectForKeyedSubscript:(NSString *)key;
