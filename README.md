@@ -15,18 +15,18 @@
 
 可根据您实际业务中对页面的要求, 选择其中一种客户端产品接入。
 
-##  Installation
-### CocoaPods
+##  安装
+### 通过 CocoaPods 安装
 
- 1. Add `pod 'YZAppSDK'` or `pod 'YZAppSDK/Native'` to your Podfile.
- 2. Run `pod install` or `pod update`.
+ 1. 在你的 Podfile 文件中添加  `pod 'YZAppSDK'` 
+ 2. 在命令行中运行 `pod install` 或 `pod update`.
 
-### Manually
- 1. Download files in the `YZBaseSDK` subdirectory.
- 2. **For base SDK**, add `YZBaseSDK` subdirectory to your Xcode project.
- 2. **For native SDK**, add both `YZBaseSDK` and `YZNativeSDK` subdirectory to your Xcode project.
+### 手动导入
 
-## Document
+ 1. 下载最新的 Release 版本。
+ 2. 将 `YZBaseSDK` 文件夹中的内容添加到你的 Xcode 工程中。
+
+## 文档
 https://github.com/youzan/YouzanMobileSDK-iOS/wiki
 
 ## License
