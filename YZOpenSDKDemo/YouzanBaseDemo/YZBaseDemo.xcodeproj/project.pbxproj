@@ -292,7 +292,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/../Pods/Target Support Files/Pods-YZBaseDemo/Pods-YZBaseDemo-resources.sh",
-				"${PODS_ROOT}/../../YZBaseSDK/YZBaseRes.bundle",
+				"${PODS_ROOT}/YZAppSDK/AppSamples/SDK/YZBaseRes.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (

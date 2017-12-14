@@ -1,6 +1,0 @@
-framework module YZBaseSDK {
-  umbrella header "YZBaseSDK.h"
-
-  export *
-  module * { export * }
-}

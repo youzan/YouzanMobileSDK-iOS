@@ -1,1 +1,1 @@
-../../../../../../YZBaseSDK/YZBaseSDK.framework/Headers/YZSDK.h
+../../../../YZAppSDK/AppSamples/SDK/YZBaseSDK.framework/Headers/YZSDK.h

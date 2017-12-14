@@ -1,6 +1,6 @@
 {
   "name": "YZAppSDK",
-  "version": "5.3.3",
+  "version": "5.3.5",
   "summary": "An AppSDK for Youzanyun.",
   "description": "There are praise cloud AppSDK is for mobile applications to build the electricity trading systemthrough an SDK will be able to integrate in the APP to provide the entire transaction services.",
   "homepage": "https://www.youzanyun.com/",
@@ -9,8 +9,7 @@
     "pansheng": "pansheng@youzan.com"
   },
   "source": {
-    "git": "https://github.com/youzan/YouzanMobileSDK-iOS.git",
-    "tag": "5.3.3"
+    "http": "https://b.yzcdn.cn/youzanyun/appsdk/open_sdk_ios_basic_5.3.5.zip"
   },
   "frameworks": [
     "WebKit",
@@ -29,21 +28,9 @@
     {
       "name": "Base",
       "ios": {
-        "vendored_frameworks": "YZBaseSDK/YZBaseSDK.framework"
+        "vendored_frameworks": "AppSamples/SDK/YZBaseSDK.framework"
       },
-      "resources": "YZBaseSDK/YZBaseRes.bundle"
-    },
-    {
-      "name": "Native",
-      "ios": {
-        "vendored_frameworks": "YZNativeSDK/YZNativeSDK.framework"
-      },
-      "resources": "YZNativeSDK/YZNativeRes.bundle",
-      "dependencies": {
-        "YZAppSDK/Base": [
-
-        ]
-      }
+      "resources": "AppSamples/SDK/YZBaseRes.bundle"
     }
   ]
 }

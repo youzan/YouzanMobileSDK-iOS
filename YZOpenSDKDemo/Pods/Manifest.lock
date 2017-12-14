@@ -1,19 +1,18 @@
 PODS:
-  - YZAppSDK/Base (5.3.3)
-  - YZAppSDK/Native (5.3.3):
-    - YZAppSDK/Base
+  - YZAppSDK (5.3.5):
+    - YZAppSDK/Base (= 5.3.5)
+  - YZAppSDK/Base (5.3.5)
 
 DEPENDENCIES:
-  - YZAppSDK/Base (from `../`)
-  - YZAppSDK/Native (from `../`)
+  - YZAppSDK (from `../YZAppSDK.podspec`)
 
 EXTERNAL SOURCES:
   YZAppSDK:
-    :path: ../
+    :podspec: ../YZAppSDK.podspec
 
 SPEC CHECKSUMS:
-  YZAppSDK: 140973751049f085025169143e225063399099ce
+  YZAppSDK: 0ebc4bbe0f58d40b2ad1d6a2df1a29ff8a2c2de8
 
-PODFILE CHECKSUM: 37699b495200c7dcc091edf7c5c780a90b897880
+PODFILE CHECKSUM: d07b46b33852dc8656ccaab177c949119000dcb8
 
 COCOAPODS: 1.4.0.beta.1
