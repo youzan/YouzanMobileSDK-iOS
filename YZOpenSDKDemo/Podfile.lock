@@ -1,0 +1,18 @@
+PODS:
+  - YZAppSDK (5.3.6):
+    - YZAppSDK/Base (= 5.3.6)
+  - YZAppSDK/Base (5.3.6)
+
+DEPENDENCIES:
+  - YZAppSDK (from `../YZAppSDK.podspec`)
+
+EXTERNAL SOURCES:
+  YZAppSDK:
+    :podspec: ../YZAppSDK.podspec
+
+SPEC CHECKSUMS:
+  YZAppSDK: 9bfd33c55f20ec27693068e653a0344a6a6cdd6c
+
+PODFILE CHECKSUM: d07b46b33852dc8656ccaab177c949119000dcb8
+
+COCOAPODS: 1.4.0.beta.1
