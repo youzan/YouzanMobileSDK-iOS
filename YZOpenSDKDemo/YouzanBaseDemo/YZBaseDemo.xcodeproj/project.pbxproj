@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3BAC7E601F9F488000FDEF0E /* Unsuggest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BAC7E5F1F9F488000FDEF0E /* Unsuggest.framework */; };
-		65D06EBBA059A1E8E8D15E2F /* libPods-YZBaseDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BAFB31CCA2DEDF86A6D4CA /* libPods-YZBaseDemo.a */; };
 		8711DFE91F03C35B00E1889F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFCF1F03C35B00E1889F /* AppDelegate.m */; };
 		8711DFEA1F03C35B00E1889F /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFD41F03C35B00E1889F /* UserModel.m */; };
 		8711DFEB1F03C35B00E1889F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFD71F03C35B00E1889F /* LoginViewController.m */; };
@@ -21,12 +20,13 @@
 		8711DFF21F03C35B00E1889F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8711DFE31F03C35B00E1889F /* LaunchScreen.xib */; };
 		8711DFF31F03C35B00E1889F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFE41F03C35B00E1889F /* main.m */; };
 		8711DFF41F03C35B00E1889F /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFE81F03C35B00E1889F /* UIViewController+BackButtonHandler.m */; };
+		FC7A3DF7D9E05FC9AAF6C3E6 /* Pods_YZBaseDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 504A5D025087BB75CF898721 /* Pods_YZBaseDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0C3B76973A4AFB6B6E8C4131 /* Pods-YZBaseDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YZBaseDemo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-YZBaseDemo/Pods-YZBaseDemo.release.xcconfig"; sourceTree = "<group>"; };
 		3BAC7E5F1F9F488000FDEF0E /* Unsuggest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unsuggest.framework; path = ../Unsuggest.framework; sourceTree = "<group>"; };
-		46BAFB31CCA2DEDF86A6D4CA /* libPods-YZBaseDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YZBaseDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		504A5D025087BB75CF898721 /* Pods_YZBaseDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YZBaseDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		721F56F81AF0A2A8009F5766 /* YZBaseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YZBaseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8711DFCE1F03C35B00E1889F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8711DFCF1F03C35B00E1889F /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BAC7E601F9F488000FDEF0E /* Unsuggest.framework in Frameworks */,
-				65D06EBBA059A1E8E8D15E2F /* libPods-YZBaseDemo.a in Frameworks */,
+				FC7A3DF7D9E05FC9AAF6C3E6 /* Pods_YZBaseDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				3BAC7E5F1F9F488000FDEF0E /* Unsuggest.framework */,
-				46BAFB31CCA2DEDF86A6D4CA /* libPods-YZBaseDemo.a */,
+				504A5D025087BB75CF898721 /* Pods_YZBaseDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
