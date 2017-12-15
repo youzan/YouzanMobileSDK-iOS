@@ -2,16 +2,9 @@
 platform :ios, '9.0'
 workspace 'YZOpenSDK'
 
-target 'YZNativeDemo' do
-  project 'YouzanNativeDemo/YZNativeDemo.xcodeproj'
-
-  pod 'YZAppSDK/Native', :path => '../'
-
-end
-
 target 'YZBaseDemo' do
   project 'YouzanBaseDemo/YZBaseDemo.xcodeproj'
   
-  pod 'YZAppSDK/Base', :path => '../'
+  pod 'YZAppSDK', :podspec => '../YZAppSDK.podspec'
 
 end

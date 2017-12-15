@@ -9,37 +9,30 @@
 Pod::Spec.new do |s|
 
   s.name         = "YZAppSDK"
-  s.version      = "6.0.0"
+  s.version      = "6.0.0-beta1"
   s.summary      = "An AppSDK for Youzanyun."
   s.description  = 'There are praise cloud AppSDK is for mobile applications to build the electricity trading system'   \
                    'through an SDK will be able to integrate in the APP to provide the entire transaction services.'
   s.homepage     = "https://www.youzanyun.com/"
   s.license      = "MIT"
   s.author       = { "pansheng" => "pansheng@youzan.com" }
-  s.source       = { :git => "https://github.com/youzan/YouzanMobileSDK-iOS.git", :tag => s.version.to_s }
+  s.source       = { :http => "https://b.yzcdn.cn/youzanyun/appsdk/open_sdk_ios_basic_#{s.version.to_s}.zip" }
 
   s.frameworks   = 'WebKit', 'UIKit', 'Foundation'
   s.requires_arc = true
 
   s.ios.deployment_target = "8.0"
-  # s.xcconfig = { 'OTHER_LDFLAGS' => '-lc++' }
   s.default_subspec = 'Base'
 
   s.subspec 'Core' do |core|
-    core.ios.vendored_framework = 'YZSDKCore/YZSDKCore.framework'
+    core.ios.vendored_framework = 'Release/YZSDKCore.framework'
   end
 
   s.subspec 'Base' do |base|
-    base.ios.vendored_framework = 'YZBaseSDK/YZBaseSDK.framework'
-    base.resources = 'YZBaseSDK/YZBaseRes.bundle'
+    base.ios.vendored_framework = 'Release/YZBaseSDK.framework'
+    base.resources = 'Release/YZBaseRes.bundle'
     base.dependency 'YZAppSDK/Core'
 
-  end
-
-  s.subspec 'Native' do |native|
-    native.ios.vendored_framework = 'YZNativeSDK/YZNativeSDK.framework'
-    native.resources = 'YZNativeSDK/YZNativeRes.bundle'
-    native.dependency 'YZAppSDK/Base'
   end
 
 end

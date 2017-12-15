@@ -1,6 +1,0 @@
-framework module YZNativeSDK {
-  umbrella header "YZNativeSDK.h"
-
-  export *
-  module * { export * }
-}
