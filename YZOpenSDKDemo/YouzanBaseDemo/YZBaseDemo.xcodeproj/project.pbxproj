@@ -292,7 +292,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/../Pods/Target Support Files/Pods-YZBaseDemo/Pods-YZBaseDemo-resources.sh",
-				"${PODS_ROOT}/../../YZBaseSDK/YZBaseRes.bundle",
+				"${PODS_ROOT}/YZAppSDK/Release/YZBaseRes.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -310,8 +310,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/../Pods/Target Support Files/Pods-YZBaseDemo/Pods-YZBaseDemo-frameworks.sh",
-				"${PODS_ROOT}/../../YZBaseSDK/YZBaseSDK.framework",
-				"${PODS_ROOT}/../../YZSDKCore/YZSDKCore.framework",
+				"${PODS_ROOT}/YZAppSDK/Release/YZBaseSDK.framework",
+				"${PODS_ROOT}/YZAppSDK/Release/YZSDKCore.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
