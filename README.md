@@ -28,6 +28,10 @@
  1. 下载最新的 Release 版本。
  2. 将 `YZBaseSDK` 文件夹中的内容添加到你的 Xcode 工程中。
 
+## Demo 注意事项
+
+使用 demo 前，需要先运行 `pod install`。
+
 ## 文档
 https://github.com/youzan/YouzanMobileSDK-iOS/wiki
 

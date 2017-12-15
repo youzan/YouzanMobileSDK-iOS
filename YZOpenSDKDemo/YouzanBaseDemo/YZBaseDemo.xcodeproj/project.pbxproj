@@ -292,7 +292,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/../Pods/Target Support Files/Pods-YZBaseDemo/Pods-YZBaseDemo-resources.sh",
-				"${PODS_ROOT}/YZAppSDK/AppSamples/SDK/YZBaseRes.bundle",
+				"${PODS_ROOT}/YZAppSDK/Release/YZBaseRes.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -309,9 +309,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-YZBaseDemo/Pods-YZBaseDemo-frameworks.sh",
+				"${PODS_ROOT}/YZAppSDK/Release/YZBaseSDK.framework",
+				"${PODS_ROOT}/YZAppSDK/Release/YZSDKCore.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YZBaseSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YZSDKCore.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -448,6 +453,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.youzan.h5SDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -474,6 +480,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.youzan.h5SDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
