@@ -25,7 +25,7 @@
 
 ### 手动导入
 
- 1. 下载最新的 Release 版本。
+ 1. 下载[最新的 Release 版本](/releases)。
  2. 将 `YZBaseSDK` 文件夹中的内容添加到你的 Xcode 工程中。
 
 ## Demo 注意事项
