@@ -14,7 +14,6 @@
 		8711DFEC1F03C35B00E1889F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFD91F03C35B00E1889F /* ViewController.m */; };
 		8711DFED1F03C35B00E1889F /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFDB1F03C35B00E1889F /* WebViewController.m */; };
 		8711DFEE1F03C35B00E1889F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8711DFDD1F03C35B00E1889F /* Main.storyboard */; };
-		8711DFEF1F03C35B00E1889F /* Cover.png in Resources */ = {isa = PBXBuildFile; fileRef = 8711DFDF1F03C35B00E1889F /* Cover.png */; };
 		8711DFF01F03C35B00E1889F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8711DFE11F03C35B00E1889F /* Images.xcassets */; };
 		8711DFF11F03C35B00E1889F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8711DFE21F03C35B00E1889F /* Info.plist */; };
 		8711DFF21F03C35B00E1889F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8711DFE31F03C35B00E1889F /* LaunchScreen.xib */; };
@@ -39,7 +38,6 @@
 		8711DFDA1F03C35B00E1889F /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		8711DFDB1F03C35B00E1889F /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		8711DFDD1F03C35B00E1889F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		8711DFDF1F03C35B00E1889F /* Cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cover.png; sourceTree = "<group>"; };
 		8711DFE11F03C35B00E1889F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8711DFE21F03C35B00E1889F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8711DFE31F03C35B00E1889F /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -95,7 +93,6 @@
 				8711DFCE1F03C35B00E1889F /* AppDelegate.h */,
 				8711DFCF1F03C35B00E1889F /* AppDelegate.m */,
 				8711DFD01F03C35B00E1889F /* Features */,
-				8711DFDE1F03C35B00E1889F /* Supporting */,
 				8711DFE01F03C35B00E1889F /* Supporting Files */,
 				8711DFE51F03C35B00E1889F /* Universal */,
 			);
@@ -148,14 +145,6 @@
 				8711DFDD1F03C35B00E1889F /* Main.storyboard */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		8711DFDE1F03C35B00E1889F /* Supporting */ = {
-			isa = PBXGroup;
-			children = (
-				8711DFDF1F03C35B00E1889F /* Cover.png */,
-			);
-			path = Supporting;
 			sourceTree = "<group>";
 		};
 		8711DFE01F03C35B00E1889F /* Supporting Files */ = {
@@ -260,7 +249,6 @@
 				8711DFF11F03C35B00E1889F /* Info.plist in Resources */,
 				8711DFF01F03C35B00E1889F /* Images.xcassets in Resources */,
 				8711DFEE1F03C35B00E1889F /* Main.storyboard in Resources */,
-				8711DFEF1F03C35B00E1889F /* Cover.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
