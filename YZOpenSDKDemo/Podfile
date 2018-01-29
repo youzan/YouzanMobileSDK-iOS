@@ -7,6 +7,6 @@ use_frameworks!
 target 'YZBaseDemo' do
   project 'YouzanBaseDemo/YZBaseDemo.xcodeproj'
   
-  pod 'YZAppSDK', :podspec => '../YZAppSDK.podspec'
+ pod 'YZAppSDK', :podspec => '../YZAppSDK.podspec'
 
 end

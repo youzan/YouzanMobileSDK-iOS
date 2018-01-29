@@ -15,12 +15,24 @@
 		8711DFED1F03C35B00E1889F /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFDB1F03C35B00E1889F /* WebViewController.m */; };
 		8711DFEE1F03C35B00E1889F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8711DFDD1F03C35B00E1889F /* Main.storyboard */; };
 		8711DFF01F03C35B00E1889F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8711DFE11F03C35B00E1889F /* Images.xcassets */; };
-		8711DFF11F03C35B00E1889F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8711DFE21F03C35B00E1889F /* Info.plist */; };
 		8711DFF21F03C35B00E1889F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8711DFE31F03C35B00E1889F /* LaunchScreen.xib */; };
 		8711DFF31F03C35B00E1889F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFE41F03C35B00E1889F /* main.m */; };
 		8711DFF41F03C35B00E1889F /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFE81F03C35B00E1889F /* UIViewController+BackButtonHandler.m */; };
 		FC7A3DF7D9E05FC9AAF6C3E6 /* Pods_YZBaseDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 504A5D025087BB75CF898721 /* Pods_YZBaseDemo.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3B83775E201F05D20007DA0F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0C3B76973A4AFB6B6E8C4131 /* Pods-YZBaseDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YZBaseDemo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-YZBaseDemo/Pods-YZBaseDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -197,6 +209,7 @@
 				721F56F61AF0A2A8009F5766 /* Resources */,
 				D7BC53A1F0CB233CB9CC8030 /* [CP] Embed Pods Frameworks */,
 				91730643EDEDD901D476BE3C /* [CP] Copy Pods Resources */,
+				3B83775E201F05D20007DA0F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -213,7 +226,7 @@
 		721F56F01AF0A2A8009F5766 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Youzan;
 				TargetAttributes = {
 					721F56F71AF0A2A8009F5766 = {
@@ -246,7 +259,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8711DFF21F03C35B00E1889F /* LaunchScreen.xib in Resources */,
-				8711DFF11F03C35B00E1889F /* Info.plist in Resources */,
 				8711DFF01F03C35B00E1889F /* Images.xcassets in Resources */,
 				8711DFEE1F03C35B00E1889F /* Main.storyboard in Resources */,
 			);
@@ -339,14 +351,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -386,14 +404,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -429,6 +453,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)/**",
 					"$(SRCROOT)/../../**",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "$(SRCROOT)/YZBaseDemo/Supporting Files/Info.plist";
@@ -456,6 +481,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)/**",
 					"$(SRCROOT)/../../**",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "$(SRCROOT)/YZBaseDemo/Supporting Files/Info.plist";

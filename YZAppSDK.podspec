@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://www.youzanyun.com/"
   s.license      = "MIT"
   s.author       = { "pansheng" => "pansheng@youzan.com" }
-  s.source       = { :http => "https://b.yzcdn.cn/youzanyun/appsdk/yz_open_sdk_ios_basic_#{s.version.to_s}.zip" }
+  s.source       = { :http => "https://b.yzcdn.cn/youzanyun/appsdk/yzy_open_sdk_ios_basic_#{s.version.to_s}.zip" }
 
   s.frameworks   = 'WebKit', 'UIKit', 'Foundation'
   s.requires_arc = true
