@@ -11,7 +11,7 @@
 #import <YZBaseSDK/YZBaseSDK.h>
 #import "YZDUICService.h"
 
-@interface WebViewController () <YZWebViewDelegate>
+@interface WebViewController () <YZWebViewDelegate, YZWebViewNoticeDelegate>
 @property (weak, nonatomic) IBOutlet YZWebView *webView;
 @property (strong, nonatomic) UIBarButtonItem *closeBarButtonItem; /**< 关闭按钮 */
 @end
@@ -23,6 +23,7 @@
     //
     self.title = @"UIWebView";
     self.webView.delegate = self;
+    self.webView.noticeDelegate = self;
     [self initBarButtonItem];
     self.navigationItem.rightBarButtonItem.enabled = NO;//默认分享按钮不可用
     
@@ -45,6 +46,7 @@
     //Demo中 退出当前controller就清除用户登录信息
     [YZSDK.shared logout];
     _webView.delegate = nil;
+    _webView.noticeDelegate = nil;
     _webView = nil;
 }
 
