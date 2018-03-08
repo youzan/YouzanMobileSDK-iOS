@@ -30,7 +30,8 @@
 
 ## Demo 注意事项
 
-使用 demo 前，需要先运行 `pod install`。
+- 使用 demo 前，需要先运行 `pod install`。
+- 填写 YZDemoConfig.h 中的 CLIENT_ID 和 CLIENT_SECRET 来使用 Demo.
 
 ## 文档
 https://github.com/youzan/YouzanMobileSDK-iOS/wiki
