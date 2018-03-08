@@ -6,10 +6,9 @@
 //
 
 #import "AppDelegate.h"
-#import <Unsuggest/UnsuggestMethod.h>
 #import <YZBaseSDK/YZBaseSDK.h>
-#import <Unsuggest/UnsuggestMethod.h>
 #import "UserModel.h"
+#import "YZDUICService.h"
 
 static NSString *const SCHEME = @"yzbasedemo";/**< demo 的 scheme */
 
@@ -41,11 +40,11 @@ static NSString *const SCHEME = @"yzbasedemo";/**< demo 的 scheme */
 needInitToken:(void (^)(NSString * _Nullable))callback
 {
     // 调用有赞云的初始化Token接口并返回 token. 见：https://www.youzanyun.com/docs/guide/3400/3466
-    // 注意，下面的代码只是做为演示，请不要使用 UnsuggestMethod。
-    [UnsuggestMethod loginWithOpenUid:[UserModel sharedManage].userId
-                      completionBlock:^(NSDictionary *info) {
-                          callback(info[@"access_token"]);
-                      }];
+    
+    [YZDUICService loginWithOpenUid:[UserModel sharedManage].userId
+                    completionBlock:^(NSDictionary *info) {
+                        callback(info[@"access_token"]);
+                    }];
 }
 
 @end

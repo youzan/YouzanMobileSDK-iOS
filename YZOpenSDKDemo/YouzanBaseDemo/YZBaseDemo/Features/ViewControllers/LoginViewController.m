@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import <YZBaseSDK/YZBaseSDK.h>
-#import <Unsuggest/UnsuggestMethod.h>
+#import "YZDUICService.h"
 
 @interface LoginViewController ()
 
@@ -42,7 +42,7 @@
     /**
      登录方法(在你使用时，应该换成自己服务器给的接口来获取access_token，cookie)
      */
-    [UnsuggestMethod loginWithOpenUid:[UserModel sharedManage].userId completionBlock:^(NSDictionary *resultInfo) {
+    [YZDUICService loginWithOpenUid:[UserModel sharedManage].userId completionBlock:^(NSDictionary *resultInfo) {
         if (resultInfo) {
             [YZSDK.shared synchronizeAccessToken:resultInfo[@"data"][@"access_token"]
                                        cookieKey:resultInfo[@"data"][@"cookie_key"]
