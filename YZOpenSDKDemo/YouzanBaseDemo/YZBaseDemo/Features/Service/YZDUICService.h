@@ -12,6 +12,16 @@
 @interface YZDUICService : NSObject
 
 /**
+ 获取 init Token。
+ 你应该在服务端处理登录信息的获取操作, 免得暴露隐私数据
+ 
+ @param completionBlock 回调
+ */
++ (void)fetchInitTokenWithCompletionBlock:(void(^)(NSDictionary *info))completionBlock;
+
+
+/**
+ 获取登录态 token
  你应该在服务端处理登录信息的获取操作, 免得暴露隐私数据
  
  @param openUID 用户open id
@@ -19,11 +29,4 @@
  */
 + (void)loginWithOpenUid:(NSString *)openUID completionBlock:(void(^)(NSDictionary *info))completionBlock;
 
-
-/**
- 你应该在服务端处理登录信息的获取操作, 免得暴露隐私数据
- 
- @param completionBlock 回调
- */
-+ (void)loginWithOutUserStateCompletionBlock:(void(^)(NSDictionary *info))completionBlock;
 @end
