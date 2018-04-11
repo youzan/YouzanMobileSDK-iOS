@@ -26,10 +26,10 @@
          completionBlock:(void(^)(NSDictionary *info))completionBlock
 {
     NSDictionary* params = @{
-                             @"user_agent" : [self generateUA],
+                             @"kdt_id": @(KDT_ID),
                              @"client_id" : CLIENT_ID,
                              @"client_secret" : CLIENT_SECRET,
-                             @"open_user_id" : openUID
+                             @"open_user_id" : openUID,
                              };
     NSURLRequest *request = [self requestWithURLString:@"http://uic.youzan.com/sso/open/login"
                                             Parameters:params];
@@ -45,6 +45,7 @@
                                       ^(NSData *data, NSURLResponse *response, NSError *error) {
                                           if (!error) {
                                               NSDictionary *resultInfo = [NSJSONSerialization JSONObjectWithData:data options:0 error:0];
+                                              NSLog(@"%@", resultInfo);
                                               if ([resultInfo[@"code"] intValue] == 0) {
                                                   if (completionBlock) {
                                                       completionBlock(resultInfo);
