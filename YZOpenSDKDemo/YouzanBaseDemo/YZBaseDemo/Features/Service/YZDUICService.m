@@ -13,7 +13,6 @@
 + (void)fetchInitTokenWithCompletionBlock:(void(^)(NSDictionary *info))completionBlock
 {
     NSDictionary* params = @{
-                             @"user_agent" : [self generateUA],
                              @"client_id" : CLIENT_ID,
                              @"client_secret" : CLIENT_SECRET
                              };
@@ -74,19 +73,6 @@
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", urlString, queryString]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     request.HTTPMethod = @"POST";
-    
-    NSString *ua = request.allHTTPHeaderFields[@"User-Agent"];
-    if ([ua rangeOfString:[self generateUA]].location == NSNotFound ) {
-        [request setValue:[NSString stringWithFormat:@"%@ %@", ua, [self generateUA]] forHTTPHeaderField:@"User-Agent"];
-    }
     return request.copy;
-}
-
-+ (NSString *)generateUA
-{
-    if (!CLIENT_ID || [CLIENT_ID isEqualToString:@""]) {
-        return @"";
-    }
-    return [@"kdtUnion_" stringByAppendingString:CLIENT_ID];
 }
 @end
