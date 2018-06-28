@@ -16,7 +16,7 @@
                              @"client_id" : CLIENT_ID,
                              @"client_secret" : CLIENT_SECRET
                              };
-    NSURLRequest *request = [self requestWithURLString:@"http://uic.youzan.com/sso/open/initToken"
+    NSURLRequest *request = [self requestWithURLString:@"https://uic.youzan.com/sso/open/initToken"
                                             Parameters:params];
     [self sendRequest:request completionBlock:completionBlock];
 }
@@ -30,7 +30,7 @@
                              @"client_secret" : CLIENT_SECRET,
                              @"open_user_id" : openUID,
                              };
-    NSURLRequest *request = [self requestWithURLString:@"http://uic.youzan.com/sso/open/login"
+    NSURLRequest *request = [self requestWithURLString:@"https://uic.youzan.com/sso/open/login"
                                             Parameters:params];
     [self sendRequest:request completionBlock:completionBlock];
 }
