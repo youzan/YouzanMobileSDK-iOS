@@ -48,6 +48,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>使用相机</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>允许写入相册以保存二维码</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>使用相册</string>
 	<key>UILaunchStoryboardName</key>
