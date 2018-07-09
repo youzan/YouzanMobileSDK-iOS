@@ -46,6 +46,14 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>使用位置获取网点</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>使用位置获取网点</string>
+    <key>NSLocationUsageDescription</key>
+    <string>使用位置获取网点</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>使用位置获取网点</string>
 	<key>NSCameraUsageDescription</key>
 	<string>使用相机</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
