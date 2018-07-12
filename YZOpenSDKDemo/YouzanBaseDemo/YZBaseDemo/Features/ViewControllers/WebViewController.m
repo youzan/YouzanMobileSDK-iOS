@@ -71,6 +71,26 @@
             self.navigationItem.rightBarButtonItem.enabled = YES;
             break;
         }
+        case YZNoticeTypeAddToCart: // 加入购物车的时候调用
+        {
+            NSLog(@"购物车 --- %@", notice.response);
+            break;
+        }
+        case YZNoticeTypeBuyNow:    // 立即购买
+        {
+            NSLog(@"立即购买 -- %@", notice.response);
+            break;
+        }
+        case YZNoticeTypeAddUp:     // 购物车结算时调用
+        {
+            NSLog(@"购物车结算 --- %@", notice.response);
+            break;
+        }
+        case YZNoticeTypePaymentFinished:   // 支付成功回调结果页
+        {
+            NSLog(@"支付成功回调结果页 --- %@", notice.response);
+            break;
+        }
         default:
             break;
     }
