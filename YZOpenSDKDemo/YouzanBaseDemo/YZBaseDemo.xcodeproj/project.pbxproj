@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B2F527021070CDA00B4C953 /* SwiftWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2F526F21070CDA00B4C953 /* SwiftWebViewController.swift */; };
 		3B61F2782049564400CB3BA7 /* YZDUICService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B61F2772049564400CB3BA7 /* YZDUICService.m */; };
 		8711DFE91F03C35B00E1889F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFCF1F03C35B00E1889F /* AppDelegate.m */; };
 		8711DFEA1F03C35B00E1889F /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFD41F03C35B00E1889F /* UserModel.m */; };
@@ -36,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		0C3B76973A4AFB6B6E8C4131 /* Pods-YZBaseDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YZBaseDemo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-YZBaseDemo/Pods-YZBaseDemo.release.xcconfig"; sourceTree = "<group>"; };
+		3B2F526E21070CD900B4C953 /* YZBaseDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YZBaseDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		3B2F526F21070CDA00B4C953 /* SwiftWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftWebViewController.swift; sourceTree = "<group>"; };
 		3B61F2762049564400CB3BA7 /* YZDUICService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZDUICService.h; sourceTree = "<group>"; };
 		3B61F2772049564400CB3BA7 /* YZDUICService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZDUICService.m; sourceTree = "<group>"; };
 		3B61F27A2049572F00CB3BA7 /* YZDemoConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZDemoConfig.h; sourceTree = "<group>"; };
@@ -111,6 +114,7 @@
 		8711DFCD1F03C35B00E1889F /* YZBaseDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8711DFDD1F03C35B00E1889F /* Main.storyboard */,
 				3B61F27A2049572F00CB3BA7 /* YZDemoConfig.h */,
 				8711DFCE1F03C35B00E1889F /* AppDelegate.h */,
 				8711DFCF1F03C35B00E1889F /* AppDelegate.m */,
@@ -127,7 +131,6 @@
 				3B61F2792049564E00CB3BA7 /* Service */,
 				8711DFD11F03C35B00E1889F /* Models */,
 				8711DFD51F03C35B00E1889F /* ViewControllers */,
-				8711DFDC1F03C35B00E1889F /* Views */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -158,16 +161,10 @@
 				8711DFD91F03C35B00E1889F /* ViewController.m */,
 				8711DFDA1F03C35B00E1889F /* WebViewController.h */,
 				8711DFDB1F03C35B00E1889F /* WebViewController.m */,
+				3B2F526F21070CDA00B4C953 /* SwiftWebViewController.swift */,
+				3B2F526E21070CD900B4C953 /* YZBaseDemo-Bridging-Header.h */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		8711DFDC1F03C35B00E1889F /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				8711DFDD1F03C35B00E1889F /* Main.storyboard */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		8711DFE01F03C35B00E1889F /* Supporting Files */ = {
@@ -242,6 +239,7 @@
 					721F56F71AF0A2A8009F5766 = {
 						CreatedOnToolsVersion = 6.3;
 						DevelopmentTeam = RNG6JK98J6;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -327,6 +325,7 @@
 				8711DFED1F03C35B00E1889F /* WebViewController.m in Sources */,
 				3B61F2782049564400CB3BA7 /* YZDUICService.m in Sources */,
 				8711DFE91F03C35B00E1889F /* AppDelegate.m in Sources */,
+				3B2F527021070CDA00B4C953 /* SwiftWebViewController.swift in Sources */,
 				8711DFEC1F03C35B00E1889F /* ViewController.m in Sources */,
 				8711DFF31F03C35B00E1889F /* main.m in Sources */,
 				8711DFEB1F03C35B00E1889F /* LoginViewController.m in Sources */,
@@ -440,6 +439,7 @@
 			baseConfigurationReference = C30074E82F44C5EB3FA63ABA /* Pods-YZBaseDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = RNG6JK98J6;
@@ -459,6 +459,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.youzan.h5SDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "YZBaseDemo/Features/ViewControllers/YZBaseDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -468,6 +471,7 @@
 			baseConfigurationReference = 0C3B76973A4AFB6B6E8C4131 /* Pods-YZBaseDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = RNG6JK98J6;
@@ -487,6 +491,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.youzan.h5SDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "YZBaseDemo/Features/ViewControllers/YZBaseDemo-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

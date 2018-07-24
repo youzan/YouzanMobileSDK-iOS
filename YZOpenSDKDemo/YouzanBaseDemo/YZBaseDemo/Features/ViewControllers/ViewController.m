@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "WebViewController.h"
 #import "UserModel.h"
+#import "YZBaseDemo-Swift.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) UIBarButtonItem *userIdBarButton;
@@ -28,12 +29,18 @@
 #pragma mark - Delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    WebViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"WebViewController"];
-    vc.loginTime = indexPath.row;
-    //目前支持有赞的店铺主页链接、商品详情链接、商品列表链接、订单列表、会员中心等
-    vc.loadUrl = @"https://h5.youzan.com/v2/goods/3ewlegud0qcjp";
-    [self.navigationController pushViewController:vc animated:YES];
+    if (indexPath.section == 0) {
+        
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        WebViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"WebViewController"];
+        vc.loginTime = indexPath.row;
+        //目前支持有赞的店铺主页链接、商品详情链接、商品列表链接、订单列表、会员中心等
+        vc.loadUrl = @"https://h5.youzan.com/v2/goods/3ewlegud0qcjp";
+        [self.navigationController pushViewController:vc animated:YES];
+    } else {
+        SwiftWebViewController *vc = [[SwiftWebViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 #pragma mark - Action
