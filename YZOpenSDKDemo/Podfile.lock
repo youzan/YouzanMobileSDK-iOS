@@ -1,9 +1,9 @@
 PODS:
-  - YZAppSDK (6.4.1):
-    - YZAppSDK/Base (= 6.4.1)
-  - YZAppSDK/Base (6.4.1):
+  - YZAppSDK (6.3.1):
+    - YZAppSDK/Base (= 6.3.1)
+  - YZAppSDK/Base (6.3.1):
     - YZAppSDK/Core
-  - YZAppSDK/Core (6.4.1)
+  - YZAppSDK/Core (6.3.1)
 
 DEPENDENCIES:
   - YZAppSDK (from `../YZAppSDK.podspec`)
@@ -13,7 +13,7 @@ EXTERNAL SOURCES:
     :podspec: "../YZAppSDK.podspec"
 
 SPEC CHECKSUMS:
-  YZAppSDK: c6fa054d617a1ff64639fa019a2417b5cf7c5647
+  YZAppSDK: 57d3616b71468e5959fa4a049abb36c6a3a70d9d
 
 PODFILE CHECKSUM: c7ab803a5ddd754cd4f25a30de57d796eb257790
 
