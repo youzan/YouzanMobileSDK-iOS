@@ -28,6 +28,7 @@ static NSString *const SCHEME = @"yzbasedemo";/**< demo 的 scheme */
     YZSDK.shared.delegate = self; // 必须设置代理方法，保证 SDK 在需要 token 的时候可以正常运行
     
     // 调用预加载接口，可以加速首屏启动
+    // 注意！！！ 请一定要把下面的链接替换为你的链接
     [YZSDK.shared preloadURLs:@[[NSURL URLWithString:@"https://h5.youzan.com/v2/goods/2ok5106sjunmd"]]];
     
     // 查看 sdk 的版本
