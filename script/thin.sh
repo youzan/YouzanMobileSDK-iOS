@@ -33,7 +33,7 @@ fi
 
 # 可以输入参数指定需要瘦身的 Framework
 if [ $# == 0 ]; then 
-  for i in YZSDKCore YZBaseSDK YZNativeSDK
+  for i in YZSDKCore YZBaseSDK
   do
       thin $i
   done
