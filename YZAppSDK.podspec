@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "YZAppSDK"
-  s.version      = "6.4.9"
+  s.version      = "6.4.10"
   s.summary      = "An AppSDK for Youzanyun."
   s.description  = 'There are praise cloud AppSDK is for mobile applications to build the electricity trading system'   \
                    'through an SDK will be able to integrate in the APP to provide the entire transaction services.'
