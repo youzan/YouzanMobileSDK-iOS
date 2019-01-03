@@ -66,8 +66,9 @@
             [self alertShareData:notice.response];
             break;
         }
-        case YZNoticeTypeReady: // Web页面已准备好，可以调用分享接口
+        case YZNoticeTypeReady: // Web页面已准备好
         {
+            // 此时可以分享，但注意此事件并不作为是否可分享的标志事件
             self.navigationItem.rightBarButtonItem.enabled = YES;
             break;
         }
@@ -98,7 +99,7 @@
 
 - (BOOL)webView:(YZWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
-    //加载新链接时，分享按钮先置为不可用，直到有赞环境初始化成功方可使用
+    //加载新链接时，分享按钮先置为不可用
     self.navigationItem.rightBarButtonItem.enabled = NO;
     // 不做任何筛选
     return YES;
