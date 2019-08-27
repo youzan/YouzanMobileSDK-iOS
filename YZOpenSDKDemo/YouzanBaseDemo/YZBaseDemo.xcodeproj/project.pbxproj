@@ -299,7 +299,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/../Pods/Target Support Files/Pods-YZBaseDemo/Pods-YZBaseDemo-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-YZBaseDemo/Pods-YZBaseDemo-frameworks.sh",
 				"${PODS_ROOT}/YZAppSDK/Release/YZBaseSDK.framework",
 				"${PODS_ROOT}/YZAppSDK/Release/YZSDKCore.framework",
 			);
@@ -310,7 +310,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-YZBaseDemo/Pods-YZBaseDemo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YZBaseDemo/Pods-YZBaseDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
