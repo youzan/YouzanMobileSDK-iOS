@@ -10,8 +10,8 @@ import UIKit
 
 class SwiftWebViewController: UIViewController {
 
-    private var webView = YZWebView(webViewType: .uiWebView)
-    var urlString = "https://h5.youzan.com/v2/goods/3ewlegud0qcjp"
+    private var webView = YZWebView(webViewType: .wkWebView)
+    var urlString = "https://h5.youzan.com/v2/showcase/homepage?alias=lUWblj8NNI"
     
     override func viewDidLoad() {
         super.viewDidLoad()

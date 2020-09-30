@@ -8,32 +8,69 @@
 
 #import "YZDUICService.h"
 
+static NSString* const LOGIN_REQUEST_URL = @"https://account.youzan.com/api/login/native/open/login-or-register.json";
+static NSString* const LOGIN_OUT_REQUEST_URL = @"https://account.youzan.com/api/login/native/open/login-out.json";
+
 @implementation YZDUICService
 
-+ (void)fetchInitTokenWithCompletionBlock:(void(^)(NSDictionary *info))completionBlock
-{
-    NSDictionary* params = @{
-                             @"client_id" : CLIENT_ID,
-                             @"client_secret" : CLIENT_SECRET
-                             };
-    NSURLRequest *request = [self requestWithURLString:@"https://uic.youzan.com/sso/open/initToken"
-                                            Parameters:params];
-    [self sendRequest:request completionBlock:completionBlock];
++ (void)loginWithCompletionBlock:(void(^)(NSDictionary *info))completionBlock {
+    NSURL *url = [NSURL URLWithString:LOGIN_REQUEST_URL];
+    NSMutableURLRequest *requestURL = [self getRequestURL:url];
+    [requestURL setHTTPMethod:@"POST"];
+    NSString *params = [NSString stringWithFormat:@"client_id=%@&open_user_id=%@&kdt_id=%@", CLIENT_ID, OPEN_USER_ID, @(KDT_ID)];
+    NSData *postData = [params dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+    [requestURL setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [requestURL setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [requestURL setHTTPBody:postData];
+
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:requestURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (completionBlock) {
+            if (!error) {
+                NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+                if (jsonDict[@"data"] != nil && [jsonDict[@"data"] isKindOfClass:[NSDictionary class]]) {
+                    completionBlock(jsonDict);
+                } else {
+                    completionBlock(nil);
+                }
+            } else {
+                completionBlock(nil);
+            }
+        }
+    }];
+    [task resume];
 }
 
-+ (void)loginWithOpenUid:(NSString *)openUID
-         completionBlock:(void(^)(NSDictionary *info))completionBlock
-{
-    NSDictionary* params = @{
-                             @"kdt_id": @(KDT_ID),
-                             @"client_id" : CLIENT_ID,
-                             @"client_secret" : CLIENT_SECRET,
-                             @"open_user_id" : openUID,
-                             };
-    NSURLRequest *request = [self requestWithURLString:@"https://uic.youzan.com/sso/open/login"
-                                            Parameters:params];
-    [self sendRequest:request completionBlock:completionBlock];
++ (void)logoutWithOpenUserID:(NSString *)openUserID {
+    NSURL *url = [NSURL URLWithString:LOGIN_OUT_REQUEST_URL];
+    NSMutableURLRequest *requestURL = [self getRequestURL:url];
+    [requestURL setHTTPMethod:@"POST"];
+    NSString *params = [NSString stringWithFormat:@"client_id=%@&open_user_id=%@", CLIENT_ID, openUserID];
+    NSData *postData = [params dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+    [requestURL setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [requestURL setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [requestURL setHTTPBody:postData];
+
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:requestURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (!error) {
+            NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+            if (jsonDict[@"data"] != nil) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                });
+            }
+        }
+    }];
+    [task resume];
 }
+
 
 + (void)sendRequest:(NSURLRequest *)request
     completionBlock:(void(^)(NSDictionary *info))completionBlock
@@ -75,4 +112,15 @@
     request.HTTPMethod = @"POST";
     return request.copy;
 }
+
++ (NSMutableURLRequest *)getRequestURL:(NSURL *)url {
+    NSMutableURLRequest *requestURL = [NSMutableURLRequest requestWithURL:url];
+    [requestURL setHTTPMethod:@"POST"];
+    [requestURL setTimeoutInterval:10.0];
+    [requestURL addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [requestURL addValue:@"UTF-8" forHTTPHeaderField:@"charset"];
+    [requestURL setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+    return requestURL;
+}
+
 @end

@@ -12,20 +12,46 @@
 #import "YZDUICService.h"
 
 @interface WebViewController () <YZWebViewDelegate, YZWebViewNoticeDelegate>
-@property (weak, nonatomic) IBOutlet YZWebView *webView;
-@property (strong, nonatomic) UIBarButtonItem *closeBarButtonItem; /**< 关闭按钮 */
+
+@property (nonatomic, strong) YZWebView *webView;
+@property (nonatomic, strong) UIBarButtonItem *closeBarButtonItem; /**< 关闭按钮 */
+
 @end
 
 @implementation WebViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //
-    self.title = @"UIWebView";
-    self.webView.delegate = self;
-    self.webView.noticeDelegate = self;
+    
+    self.title = @"YZWebView";
+    self.view.backgroundColor = UIColor.whiteColor;
     [self initBarButtonItem];
     self.navigationItem.rightBarButtonItem.enabled = NO;//默认分享按钮不可用
+    
+    YZWebViewType type = YZWebViewTypeWKWebView;
+    self.webView = [[YZWebView alloc] initWithWebViewType:type];
+       
+    CGRect originFrame = self.view.bounds;
+
+    if (originFrame.size.height == 812) {
+        self.webView.frame = CGRectMake(originFrame.origin.x, originFrame.origin.y, originFrame.size.width, originFrame.size.height - 34);
+    } else {
+        self.webView.frame = originFrame;
+    }
+    self.webView.frame = originFrame;
+    if (@available(iOS 11.0, *)) {
+       CGFloat bottom = [[[[UIApplication sharedApplication] delegate] window] safeAreaInsets].bottom;
+       if (bottom > 0) {
+           // iPhone X Series
+           self.webView.frame = CGRectMake(originFrame.origin.x, originFrame.origin.y, originFrame.size.width, originFrame.size.height - bottom);
+       }
+    }
+
+    self.webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.webView.delegate = self;
+    self.webView.noticeDelegate = self;
+    
+    [self.view addSubview:self.webView];
     
     // 加载链接
     [self loginAndloadUrl:self.loadUrl];
@@ -97,8 +123,7 @@
     }
 }
 
-- (BOOL)webView:(YZWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
-{
+- (BOOL)webView:(id<YZWebView>)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(WKNavigationType)navigationType {
     //加载新链接时，分享按钮先置为不可用
     self.navigationItem.rightBarButtonItem.enabled = NO;
     // 不做任何筛选
@@ -161,12 +186,10 @@
     /**
      登录方法(在你使用时，应该换成自己服务器给的接口来获取access_token，cookie)
      */
-    [YZDUICService loginWithOpenUid:[UserModel sharedManage].userId completionBlock:^(NSDictionary *resultInfo) {
-        if (resultInfo) {
-            //用户登录成功
-            [YZSDK.shared synchronizeAccessToken:resultInfo[@"data"][@"access_token"]
-                                       cookieKey:resultInfo[@"data"][@"cookie_key"]
-                                     cookieValue:resultInfo[@"data"][@"cookie_value"]];
+    [YZDUICService loginWithCompletionBlock:^(NSDictionary *info) {
+        if (info && [info[@"code"] intValue] == 0) {
+            [YZSDK.shared synchronizeCookieKey:info[@"data"][@"cookie_key"]
+                                andCookieValue:info[@"data"][@"cookie_value"]];
             [self loadWithString:urlString];
         }
     }];

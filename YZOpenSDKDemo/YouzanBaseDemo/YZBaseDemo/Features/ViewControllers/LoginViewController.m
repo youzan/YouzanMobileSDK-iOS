@@ -37,19 +37,18 @@
 }
 
 - (IBAction)login:(id)sender {
-    
-    
     /**
      登录方法(在你使用时，应该换成自己服务器给的接口来获取access_token，cookie)
      */
-    [YZDUICService loginWithOpenUid:[UserModel sharedManage].userId completionBlock:^(NSDictionary *resultInfo) {
-        if (resultInfo) {
-            [YZSDK.shared synchronizeAccessToken:resultInfo[@"data"][@"access_token"]
-                                       cookieKey:resultInfo[@"data"][@"cookie_key"]
-                                     cookieValue:resultInfo[@"data"][@"cookie_value"]];
-            [self dismissViewControllerAnimated:YES completion:^{
-                [self callBlockWithResult:YES];
-            }];
+    [YZDUICService loginWithCompletionBlock:^(NSDictionary *info) {
+        if (info && [info[@"code"] intValue] == 0) {
+            [YZSDK.shared synchronizeCookieKey:info[@"data"][@"cookie_key"]
+                                andCookieValue:info[@"data"][@"cookie_value"]];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self dismissViewControllerAnimated:YES completion:^{
+                    [self callBlockWithResult:YES];
+                }];
+            });
         }
     }];
 }
