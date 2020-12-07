@@ -8,8 +8,9 @@
 
 #import "YZDUICService.h"
 
-static NSString* const LOGIN_REQUEST_URL = @"https://account.youzan.com/api/login/native/open/login-or-register.json";
-static NSString* const LOGIN_OUT_REQUEST_URL = @"https://account.youzan.com/api/login/native/open/login-out.json";
+// 此处需要请求商家server端的登录注册及登出API，须由商家server端调用有赞云的登录注册接口
+static NSString* const LOGIN_REQUEST_URL = @"xxx";
+static NSString* const LOGIN_OUT_REQUEST_URL = @"xxx";
 
 @implementation YZDUICService
 
@@ -17,7 +18,8 @@ static NSString* const LOGIN_OUT_REQUEST_URL = @"https://account.youzan.com/api/
     NSURL *url = [NSURL URLWithString:LOGIN_REQUEST_URL];
     NSMutableURLRequest *requestURL = [self getRequestURL:url];
     [requestURL setHTTPMethod:@"POST"];
-    NSString *params = [NSString stringWithFormat:@"client_id=%@&open_user_id=%@&kdt_id=%@", CLIENT_ID, OPEN_USER_ID, @(KDT_ID)];
+    // 具体参数由App与Server端敲定
+    NSString *params = @"xxx=xxx&xxx=xxx";
     NSData *postData = [params dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
     [requestURL setValue:postLength forHTTPHeaderField:@"Content-Length"];
@@ -48,7 +50,8 @@ static NSString* const LOGIN_OUT_REQUEST_URL = @"https://account.youzan.com/api/
     NSURL *url = [NSURL URLWithString:LOGIN_OUT_REQUEST_URL];
     NSMutableURLRequest *requestURL = [self getRequestURL:url];
     [requestURL setHTTPMethod:@"POST"];
-    NSString *params = [NSString stringWithFormat:@"client_id=%@&open_user_id=%@", CLIENT_ID, openUserID];
+    // 具体参数由App与Server端敲定
+    NSString *params = @"xxx=xxx&xxx=xxx";
     NSData *postData = [params dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
     [requestURL setValue:postLength forHTTPHeaderField:@"Content-Length"];
