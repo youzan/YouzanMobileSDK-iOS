@@ -10,7 +10,7 @@
 #import "LoginViewController.h"
 #import <YZBaseSDK/YZBaseSDK.h>
 #import "YZDUICService.h"
-
+#import <YZBaseSDK/YZSDK.h>
 @interface WebViewController () <YZWebViewDelegate, YZWebViewNoticeDelegate>
 
 @property (nonatomic, strong) YZWebView *webView;
@@ -188,8 +188,9 @@
      */
     [YZDUICService loginWithCompletionBlock:^(NSDictionary *info) {
         if (info && [info[@"code"] intValue] == 0) {
-            [YZSDK.shared synchronizeCookieKey:info[@"data"][@"cookie_key"]
-                                andCookieValue:info[@"data"][@"cookie_value"]];
+            [[YZSDK shared] loginWithOpenUserId:@"user_id" avatar:nil extra:nil nickName:nil gender:1 andCompletion:^(BOOL isSuccess, NSString * _Nullable yzOpenId) {
+                
+            }];
             [self loadWithString:urlString];
         }
     }];

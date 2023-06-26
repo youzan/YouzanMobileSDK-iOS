@@ -11,14 +11,14 @@
 		3B61F2782049564400CB3BA7 /* YZDUICService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B61F2772049564400CB3BA7 /* YZDUICService.m */; };
 		8711DFE91F03C35B00E1889F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFCF1F03C35B00E1889F /* AppDelegate.m */; };
 		8711DFEA1F03C35B00E1889F /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFD41F03C35B00E1889F /* UserModel.m */; };
-		8711DFEB1F03C35B00E1889F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFD71F03C35B00E1889F /* LoginViewController.m */; };
 		8711DFEC1F03C35B00E1889F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFD91F03C35B00E1889F /* ViewController.m */; };
-		8711DFED1F03C35B00E1889F /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFDB1F03C35B00E1889F /* WebViewController.m */; };
 		8711DFEE1F03C35B00E1889F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8711DFDD1F03C35B00E1889F /* Main.storyboard */; };
 		8711DFF01F03C35B00E1889F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8711DFE11F03C35B00E1889F /* Images.xcassets */; };
 		8711DFF21F03C35B00E1889F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8711DFE31F03C35B00E1889F /* LaunchScreen.xib */; };
 		8711DFF31F03C35B00E1889F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFE41F03C35B00E1889F /* main.m */; };
 		8711DFF41F03C35B00E1889F /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8711DFE81F03C35B00E1889F /* UIViewController+BackButtonHandler.m */; };
+		B900C6B82A499359001B65EE /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B900C6B72A499359001B65EE /* WebViewController.m */; };
+		B900C6BA2A499363001B65EE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B900C6B92A499363001B65EE /* LoginViewController.m */; };
 		FC7A3DF7D9E05FC9AAF6C3E6 /* Pods_YZBaseDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 504A5D025087BB75CF898721 /* Pods_YZBaseDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,11 +49,9 @@
 		8711DFD31F03C35B00E1889F /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		8711DFD41F03C35B00E1889F /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		8711DFD61F03C35B00E1889F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		8711DFD71F03C35B00E1889F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		8711DFD81F03C35B00E1889F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		8711DFD91F03C35B00E1889F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8711DFDA1F03C35B00E1889F /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
-		8711DFDB1F03C35B00E1889F /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		8711DFDD1F03C35B00E1889F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8711DFE11F03C35B00E1889F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8711DFE21F03C35B00E1889F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +59,8 @@
 		8711DFE41F03C35B00E1889F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8711DFE71F03C35B00E1889F /* UIViewController+BackButtonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButtonHandler.h"; sourceTree = "<group>"; };
 		8711DFE81F03C35B00E1889F /* UIViewController+BackButtonHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButtonHandler.m"; sourceTree = "<group>"; };
+		B900C6B72A499359001B65EE /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		B900C6B92A499363001B65EE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		C30074E82F44C5EB3FA63ABA /* Pods-YZBaseDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YZBaseDemo.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-YZBaseDemo/Pods-YZBaseDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,11 +156,11 @@
 			isa = PBXGroup;
 			children = (
 				8711DFD61F03C35B00E1889F /* LoginViewController.h */,
-				8711DFD71F03C35B00E1889F /* LoginViewController.m */,
+				B900C6B92A499363001B65EE /* LoginViewController.m */,
 				8711DFD81F03C35B00E1889F /* ViewController.h */,
 				8711DFD91F03C35B00E1889F /* ViewController.m */,
 				8711DFDA1F03C35B00E1889F /* WebViewController.h */,
-				8711DFDB1F03C35B00E1889F /* WebViewController.m */,
+				B900C6B72A499359001B65EE /* WebViewController.m */,
 				3B2F526F21070CDA00B4C953 /* SwiftWebViewController.swift */,
 				3B2F526E21070CD900B4C953 /* YZBaseDemo-Bridging-Header.h */,
 			);
@@ -323,13 +323,13 @@
 			files = (
 				8711DFF41F03C35B00E1889F /* UIViewController+BackButtonHandler.m in Sources */,
 				8711DFEA1F03C35B00E1889F /* UserModel.m in Sources */,
-				8711DFED1F03C35B00E1889F /* WebViewController.m in Sources */,
 				3B61F2782049564400CB3BA7 /* YZDUICService.m in Sources */,
 				8711DFE91F03C35B00E1889F /* AppDelegate.m in Sources */,
+				B900C6B82A499359001B65EE /* WebViewController.m in Sources */,
+				B900C6BA2A499363001B65EE /* LoginViewController.m in Sources */,
 				3B2F527021070CDA00B4C953 /* SwiftWebViewController.swift in Sources */,
 				8711DFEC1F03C35B00E1889F /* ViewController.m in Sources */,
 				8711DFF31F03C35B00E1889F /* main.m in Sources */,
-				8711DFEB1F03C35B00E1889F /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

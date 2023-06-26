@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import <YZBaseSDK/YZBaseSDK.h>
+#import <YZBaseSDK/YZSDK.h>
 #import "YZDUICService.h"
 
 @interface LoginViewController ()
@@ -42,13 +43,13 @@
      */
     [YZDUICService loginWithCompletionBlock:^(NSDictionary *info) {
         if (info && [info[@"code"] intValue] == 0) {
-            [YZSDK.shared synchronizeCookieKey:info[@"data"][@"cookie_key"]
-                                andCookieValue:info[@"data"][@"cookie_value"]];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self dismissViewControllerAnimated:YES completion:^{
-                    [self callBlockWithResult:YES];
-                }];
-            });
+            [[YZSDK shared] loginWithOpenUserId:@"user_id" avatar:nil extra:nil nickName:nil gender:1 andCompletion:^(BOOL isSuccess, NSString * _Nullable yzOpenId) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self dismissViewControllerAnimated:YES completion:^{
+                        [self callBlockWithResult:YES];
+                    }];
+                });
+            }];
         }
     }];
 }
