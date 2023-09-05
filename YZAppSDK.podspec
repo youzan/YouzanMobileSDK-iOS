@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "YZAppSDK"
-  s.version      = "7.2.1"
+  s.version      = "7.2.3"
   s.summary      = "An AppSDK for Youzanyun."
   s.description  = 'There are praise cloud AppSDK is for mobile applications to build the electricity trading system'   \
                    'through an SDK will be able to integrate in the APP to provide the entire transaction services.'
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.frameworks   = 'WebKit', 'UIKit', 'Foundation'
   s.requires_arc = true
 
-  s.ios.deployment_target = "8.0"
+  s.ios.deployment_target = "11.0"
   s.default_subspec = 'Base'
 
   s.pod_target_xcconfig = {
