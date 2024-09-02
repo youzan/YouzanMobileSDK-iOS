@@ -26,6 +26,9 @@
 
 - 使用 demo 前，需要先运行 `pod install`。
 - 填写 YZDemoConfig.h 中的 CLIENT_ID 和 CLIENT_SECRET 来使用 Demo.
+- iOS BundleID须与有赞云应用后台的安全码id保持一致，如图（左：XCode截图 右：有赞云后台截图）
+![image](https://github.com/user-attachments/assets/ce441e48-154f-4da1-ab9b-79f247ab436a)
+
 
 ## 文档
 https://github.com/youzan/YouzanMobileSDK-iOS/wiki
