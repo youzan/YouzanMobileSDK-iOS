@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://www.youzanyun.com/"
   s.license      = "MIT"
   s.author       = { "pansheng" => "pansheng@youzan.com" }
-  s.source       = { :http => "https://b.yzcdn.cn/youzanyun/appsdk/open_sdk_ios_basic_#{s.version.to_s}.zip" }
+  s.source = { :path => "./Release" }
 
   s.frameworks   = 'WebKit', 'UIKit', 'Foundation'
   s.requires_arc = true
@@ -30,11 +30,11 @@ Pod::Spec.new do |s|
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
   s.subspec 'Core' do |core|
-    core.ios.vendored_framework = 'Release/YZSDKCore.framework'
+    core.ios.vendored_framework = 'YZSDKCore.framework'
   end
 
   s.subspec 'Base' do |base|
-    base.ios.vendored_framework = 'Release/YZBaseSDK.framework'
+    base.ios.vendored_framework = 'YZBaseSDK.framework'
     base.dependency 'YZAppSDK/Core'
 
   end

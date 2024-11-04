@@ -46,16 +46,16 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string>使用位置获取网点</string>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>使用位置获取网点</string>
-    <key>NSLocationUsageDescription</key>
-    <string>使用位置获取网点</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>使用位置获取网点</string>
 	<key>NSCameraUsageDescription</key>
 	<string>使用相机</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>使用位置获取网点</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>使用位置获取网点</string>
+	<key>NSLocationUsageDescription</key>
+	<string>使用位置获取网点</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>使用位置获取网点</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>允许写入相册以保存二维码</string>
 	<key>NSPhotoLibraryUsageDescription</key>

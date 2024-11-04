@@ -17,14 +17,8 @@
  
  @param completionBlock 回调
  */
-+ (void)loginWithCompletionBlock:(void(^)(NSDictionary *info))completionBlock;
++ (void)ssoLoginWithCompletionBlock:(void (^)(BOOL))completionBlock;
 
-
-/**
- 登出
- 
- @param openUserID userID
- */
-+ (void)logoutWithOpenUserID:(NSString *)openUserID;
++ (void)ssoLogout;
 
 @end
