@@ -84,6 +84,7 @@
     switch (notice.type) {
         case YZNoticeTypeLogin: // 收到登陆请求
         {
+            NSLog(@"received YZNoticeTypeLogin");
             [self showLoginViewControllerIfNeeded];
             break;
         }
@@ -183,14 +184,8 @@
         return;
     }
     
-    /**
-     登录方法(在你使用时，应该换成自己服务器给的接口来获取access_token，cookie)
-     */
-    [YZDUICService loginWithCompletionBlock:^(NSDictionary *info) {
-        if (info && [info[@"code"] intValue] == 0) {
-            [[YZSDK shared] loginWithOpenUserId:@"user_id" avatar:nil extra:nil nickName:nil gender:1 andCompletion:^(BOOL isSuccess, NSString * _Nullable yzOpenId) {
-                
-            }];
+    [YZDUICService ssoLoginWithCompletionBlock:^(BOOL success) {
+        if (success) {
             [self loadWithString:urlString];
         }
     }];
