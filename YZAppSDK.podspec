@@ -24,17 +24,12 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "11.0"
   s.default_subspec = 'Base'
 
-  s.pod_target_xcconfig = {
-    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
-  }
-  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-
   s.subspec 'Core' do |core|
-    core.ios.vendored_framework = 'Release/YZSDKCore.framework'
+    core.ios.vendored_framework = 'Release/YZSDKCore.xcframework'
   end
 
   s.subspec 'Base' do |base|
-    base.ios.vendored_framework = 'Release/YZBaseSDK.framework'
+    base.ios.vendored_framework = 'Release/YZBaseSDK.xcframework'
     base.dependency 'YZAppSDK/Core'
 
   end
